@@ -1,0 +1,1604 @@
+<html>
+
+<head>
+<style>
+shuffle{
+}
+
+#shuffle div input{
+	height: 16.666%;
+	width: 16%;
+	font-size: 200%;
+	text-transform: uppercase;
+}
+
+#answer div input{
+	height: 15%;
+	width: 16%;
+	font-size: 200%;
+	text-transform: uppercase;
+}
+
+#answer div input{
+	height: 15%;
+	width: 16%;
+	font-size: 200%;
+}
+
+.board{
+	height: 50%;
+	width: 49%;
+
+	border: 4px black solid;
+	position: relative;
+	float: left;
+}
+
+#boardTitle{
+	width: 100%;
+	border-bottom: 1px black solid;
+	
+	background-color: #EAEAEA;
+	
+	text-align: center;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#legendTable{
+	margin-top: 10px;
+	font-weight: bold;
+	width: 100%;
+}
+
+#legendTable input{
+	width: 100%;
+}
+
+.squareFocus{
+	background-color: green;
+}
+
+label{
+	width: 225px;
+	float: left;
+}
+
+.paintButton{
+	background-image: url(http://icons.iconarchive.com/icons/iconleak/or/256/brush-icon.png);
+	background-size: 100% 100%;
+	background-color: white;
+	
+	width: 24px;
+	height: 24px;
+}
+
+.pokemonAbbr{
+	text-transform:uppercase;
+}
+
+</style>
+</head>
+
+
+
+
+
+
+
+
+
+<body style="overflow: hidden;">
+
+<div id="shuffle" class="board">
+
+</div>
+
+<div id="legend" class="board">
+	<div id="boardTitle">Legend</div>
+	<div>
+		<table id="legendTable">
+			<thead>
+				<tr>
+					<th>
+						Abbreviation
+					</th>
+					<th>
+						Real Name
+					</th>
+					<th>
+						Power
+					</th>
+					<th>
+						Mega?
+					</th>
+					<th>
+						Paint
+					</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" maxlength="6" placeholder="Example: A">
+					</td>
+					<td>
+						<select class="pokemonSelect" style="width: 100%"/>
+					</td>
+					<td>
+						<input type="text" placeholder="Example: 50">
+					</td>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" maxlength="6" placeholder="Example: B">
+					</td>
+					<td>
+						<select class="pokemonSelect" style="width: 100%"/>
+					</td>
+					<td>
+						<input type="text" placeholder="Example: 50">
+					</td>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" maxlength="6" placeholder="Example: C">
+					</td>
+					<td>
+						<select class="pokemonSelect" style="width: 100%"/>
+					</td>
+					<td>
+						<input type="text" placeholder="Example: 50">
+					</td>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" maxlength="6" placeholder="Example: D">
+					</td>
+					<td>
+						<select class="pokemonSelect" style="width: 100%"/>
+					</td>
+					<td>
+						<input type="text" placeholder="Example: 50">
+					</td>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" maxlength="6" placeholder="Example: E">
+					</td>
+					<td>
+						<select class="pokemonSelect" style="width: 100%"/>
+					</td>
+					<td>
+						<input type="text" placeholder="Example: 50">
+					</td>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" maxlength="6" placeholder="Example: F">
+					</td>
+					<td>
+						<select class="pokemonSelect" style="width: 100%"/>
+					</td>
+					<td>
+						<input type="text" placeholder="Example: 50">
+					</td>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" maxlength="6" placeholder="Example: G">
+					</td>
+					<td>
+						<select class="pokemonSelect" style="width: 100%"/>
+					</td>
+					<td>
+						<input type="text" placeholder="Example: 50">
+					</td>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" maxlength="6" placeholder="Example: H">
+					</td>
+					<td>
+						<select class="pokemonSelect" style="width: 100%"/>
+					</td>
+					<td>
+						<input type="text" placeholder="Example: 50">
+					</td>
+					<td>
+						<input type="checkbox">
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" readonly="readonly" value="WOOD">
+					</td>
+					<td>
+						<select class="pokemonSelect" readonly="readonly" style="width: 100%"/>
+							<option value="WOOD">WOOD</option>
+						</select>
+					</td>
+					<td>
+						<input type="text" value="100">
+					</td>
+					<td>
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="pokemonAbbr" type="text" readonly="readonly" value="STEEL">
+					</td>
+					<td>
+						<select class="pokemonSelect" readonly="readonly" style="width: 100%"/>
+							<option value="STEEL">STEEL</option>
+						</select>
+					</td>
+					<td>
+						<input type="text" readonly="readonly" value="0">
+					</td>
+					<td>
+					</td>
+					<td>
+						<input type="button" class="paintButton" value=" " onclick="paintShuffle(this);">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="answer" class="board">
+
+</div>
+
+<div id="stats" class="board">
+	<div id="boardTitle">Parameters</div>
+	<p>
+	&nbsp;
+	</p>
+	<p>
+		<label>Mode: </label>
+		<input type="radio" name="mode" value="1" checked="checked"/>Destruction
+		<!-- <input type="radio" name="mode" value="2"/>More Points -->
+	</p>
+	<p>
+		<label>Priority to destroy Mega: </label>
+		<input type="radio" name="destroyMega" value="1" checked="checked"/>None
+		<!-- <input type="radio" name="destroyIce" value="2"/>Medium -->
+		<!-- <input type="radio" name="destroyIce" value="2"/>High -->
+	</p>
+	<p>
+		<label>Priority to destroy Ice Blocks: </label>
+		<input type="radio" name="destroyIce" value="1" checked="checked"/>None
+		<!-- <input type="radio" name="destroyIce" value="2"/>Medium -->
+		<!-- <input type="radio" name="destroyIce" value="2"/>High -->
+	</p>
+	<p>
+		<label>Priority to destroy Wood Blocks: </label>
+		<input type="radio" name="destroyWood" value="1" checked="checked"/>None
+		<!-- <input type="radio" name="destroyWood" value="2"/>Medium -->
+		<!-- <input type="radio" name="destroyWood" value="2"/>High -->
+	</p>
+	
+	<div style="bottom: 0px; position: absolute; width: 100%; height: 50px;">
+		<input type="button" value="Generate" style="width: 100%; height: 100%; font-size: 24px;" onclick="generate()">
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://www.openjs.com/scripts/events/keyboard_shortcuts/shortcut.js"></script>
+<script>
+
+
+
+
+
+
+
+
+
+var shuffleMap;
+var legend;
+var bestPlays;
+var showPlay;
+var pokemonDataBase;
+var paintPokemon = "";
+
+function createShuffle(){
+	var pk, line;
+	for( var i = 0; i < 6; i++ ){
+		line = $( document.createElement("div") );
+		for( var j = 0; j < 6; j++ ){
+			pk = $( document.createElement("input") );
+			
+			pk.attr("type", "text");
+			pk.attr("class", "shuffleInput");
+			pk.attr("id", "shuffle_"+ i + "_" + j);
+			pk.attr("maxlength", 6);
+			
+			pk.bind('blur', function(){
+				readLegend();
+				
+				updateShuffleBackground(this);
+			} );
+			
+			pk.bind('click', function(){
+				if( paintPokemon != "" ){
+					this.value = paintPokemon;
+				}
+				
+				updateShuffleBackground(this);
+			} );
+			
+			line.append( pk );
+		}
+		$("#shuffle").append( line );	
+	}
+}
+
+function createAnswerShuffle( map ){
+	var pk, line;
+	
+	$("#answer").html("");
+	for( var i = 0; i < 6; i++ ){
+		line = $( document.createElement("div") );
+		for( var j = 0; j < 6; j++ ){
+			pk = $( document.createElement("input") );
+			
+			pk.attr("type", "text");
+			pk.attr("class", "answerInput");
+			pk.attr("id", "answer_"+ i + "_" + j);
+			pk.attr("maxlength", 6);
+			pk.val( map[i][j] );
+			
+			pk.bind('blur', function(){
+				readLegend();
+				
+				updateShuffleBackground(this);
+			} );
+			
+			pk.bind('click', function(){
+				if( paintPokemon != "" ){
+					this.value = paintPokemon;
+				}
+				
+				updateShuffleBackground(this);
+			} );
+			
+			line.append( pk );
+		}
+		$("#answer").append( line );
+	}
+	
+	$("#answer").append( "<input type='button' value='Previous Solution' style='height: 10%; width: 30%;' onclick='showPreviousPlay()'>" );
+	$("#answer").append( "<input type='button' value='Next Solution' style='height: 10%; width: 30%;' onclick='showNextPlay()'>" );
+	$("#answer").append( "<input type='button' value='Copy Solution to Source' style='height: 10%; width: 40%;' onclick='copyPlay()'>" );
+}
+
+function updateAllShuffleBackground(){
+	readLegend();
+
+	$("#shuffle").find(":text").each( function(){
+		updateShuffleBackground( this );
+	} );
+	
+	$("#answer").find(":text").each( function(){
+		updateShuffleBackground( this );
+	} );
+}
+
+function updateShuffleBackground( input ){
+	var value = input.value;
+	var ice = false;
+	var style;
+	
+	if( value.indexOf("|") == 0 ){
+		ice = true;
+		value = value.replace(/(\||)/g, '');
+	}
+	
+	value = value.toUpperCase();
+	
+	styles = {
+		"background-color": "",
+		"background-image": ""
+	}
+
+	if( value != '' && legend[ value ] != undefined ){
+		
+		var pokemon = findPokemonByName( legend[ value ].name );
+			
+		if( pokemon != undefined ){
+			styles = {
+				"background-image": "url(" +pokemon.pictureSource+ ")",
+				"background-color": ( ice ? 'cyan': '' ),
+				"background-size": "50% 100%",
+				"background-repeat": "no-repeat",
+				"background-position": "right"
+			}
+		}
+	}else{
+		if( value != '' ){
+			styles = {
+				"background-image": "",
+				"background-color": "red"
+			}
+		}
+	}
+	
+	$(input).css(styles);
+}
+
+
+function fillPokemonSelect(){
+	$(".pokemonSelect").each( function(){
+		var select = $(this);
+		if( select.attr("readonly") != "readonly" ){
+			var opt = document.createElement("option");
+			opt.value = "";
+			opt.text = "";
+			select.append( opt );
+		
+			for( var i = 0; i < pokemonDataBase.length; i++ ){
+				var pk = pokemonDataBase[i];
+				
+				opt = document.createElement("option");
+				opt.value = pk.number;
+				opt.text = pk.name;
+				select.append( opt );
+			}
+		}
+		
+	} );
+}
+
+function findPokemonByName( name ){
+	var pk = undefined, found = false;
+	for( var i = 0; i < pokemonDataBase.length; i++ ){
+		pk = pokemonDataBase[i];
+		
+		if( pk.name == name ){
+			found = true;
+			break;
+		}
+	}
+	
+	if( !found ){
+		pk = undefined;
+	}
+	return pk;
+}
+
+function addPokemonToDataBase( number, picture, name, type, basePower, ability, location, captureRate ){
+	var pokemon = {};
+	pokemon.number = number;
+	pokemon.pictureSource = picture;
+	pokemon.name = name;
+	pokemon.type = type;
+	pokemon.basePower = basePower;
+	pokemon.ability = ability;
+	pokemon.location = location;
+	pokemon.captureRate = captureRate;
+	
+	pokemonDataBase.push( pokemon );
+}
+
+function readShuffle(){
+	shuffleMap = new Array( 6 );
+	
+	for( var i = 0; i < 6; i++ ){
+		shuffleMap[i] = new Array( 6 );
+		for( var j = 0; j < 6; j++ ){
+			shuffleMap[i][j] = $("#shuffle_"+ i + "_" + j).val().toUpperCase();
+		}
+	}
+}
+
+function readLegend(){
+	legend = {};
+	
+	$("#legendTable").find("tbody").find("tr").each( function(){
+		var tr = $(this);
+		
+		var abbr = tr.find("input").eq(0).val().toUpperCase();
+
+		if( abbr != "" ){
+			var name = tr.find("select option:selected").html();
+			var power = tr.find("input").eq(1).val();
+			var mega = tr.find("input").eq(2).val();
+			
+			legend[ abbr ] = {};
+			legend[ abbr ].name = name;
+			legend[ abbr ].power = power;
+			legend[ abbr ].mega = mega;
+		}
+	} );
+}
+
+function sleepFor( sleepDuration ){
+    var now = new Date().getTime();
+    while(new Date().getTime() < now + sleepDuration){ /* do nothing */ } 
+}
+
+function copyArray( currentArray ){
+	var newArray = [];
+
+	for (var i = 0; i < currentArray.length; i++)
+		newArray[i] = currentArray[i].slice();
+		
+	return newArray;
+}
+
+function isMovable( letter ){
+	return letter != "WOOD" && letter != "STEEL" && letter.indexOf("|") ==  -1;
+}
+
+function isRepeatedMove( allPlays, play ){
+	var returnValue = false;
+
+	var otherPlay;
+	for( var i = 0; i < bestPlays.length; i++ ){
+		otherPlay = bestPlays[i];
+		if( play.from[0] == otherPlay.to[0] && play.from[1] == otherPlay.to[1] 
+		 && play.to[0] == otherPlay.from[0] && play.to[1] == otherPlay.from[1]  ){
+			returnValue = true;
+			break;
+		}
+	}
+
+	return returnValue;
+}
+
+function generate(){
+	var time = new Date().getTime();
+	readShuffle();
+	readLegend();
+	
+	var count = 0;
+	bestPlays = [];
+	for( var i = 0; i < 6; i++ ){
+		for( var j = 0; j < 6; j++ ){
+		
+			for( var i2 = 0; i2 < 6; i2++ ){
+				for( var j2 = 0; j2 < 6; j2++ ){
+					if( i == i2 && j == j2 ) continue;
+				
+					var obj = {}
+					obj.from = [i, j];
+					obj.to = [i2, j2];
+				
+					if( isMovable( shuffleMap[i][j] ) && isMovable( shuffleMap[i2][j2] ) && !isRepeatedMove(bestPlays, obj) ){
+						bestPlays[count] = obj;
+			
+						count++;
+					}
+				}
+			}
+		}
+	}
+	
+	var copy, play, temp;
+	for( var i = 0; i < bestPlays.length; i++ ){
+		
+		var copy, play, temp, result;
+		play = bestPlays[i];
+		copy = copyArray( shuffleMap );
+		
+		temp = copy[ play.from[0] ][ play.from[1] ];
+		copy[ play.from[0] ][ play.from[1] ] = copy[ play.to[0] ][ play .to[1] ];
+		copy[ play.to[0] ][ play.to[1] ] = temp;
+
+		result = destroyObjects( copy );
+		play.destroyed = result.destroyedObjects;
+		play.xSum = result.xSum;
+		play.ySum = result.ySum;
+		
+		play.map = copy;
+	}
+	
+	copy = copyArray( shuffleMap );
+	copy[ play.from[0] ][ play.from[1] ] = copy[ play.to[0] ][ play.to[1] ];
+	copy[ play.to[0] ][ play.to[1] ] = temp;
+
+	bestPlays.sort(function(a, b) {
+		var sort = parseInt(a.destroyed) - parseInt(b.destroyed);
+		if( sort == 0 ){
+			sort =  parseInt(a.ySum) - parseInt(b.ySum) ;
+		}
+		
+		return sort;
+	});
+	
+	showPlay = bestPlays.length - 1;
+
+	showBestPlay( bestPlays[ showPlay ], copy );
+	updateAllShuffleBackground();
+	
+	setTimeout( function(){
+		showBestPlay( bestPlays[ showPlay ] );
+		updateAllShuffleBackground();
+	}, 666 );
+	
+	//console.log("Total time: " + ( new Date().getTime() - time ) );
+}
+
+function showPreviousPlay(){
+	showPlay++;
+
+	if( showPlay < bestPlays.length ){
+		showBestPlay( bestPlays[ showPlay ] );
+	}
+	
+	updateAllShuffleBackground();
+}
+
+function showNextPlay(){
+	showPlay--;
+
+	if( showPlay >= 0 ){
+		showBestPlay( bestPlays[ showPlay ] );
+	}
+	
+	updateAllShuffleBackground();
+}
+
+function copyPlay(){
+	for( var i = 0; i < 6; i++ ){
+		for( var j = 0; j < 6; j++ ){
+			$("#shuffle_"+ i + "_" + j).val( $("#answer_" + i + "_" + j).val() );
+		}
+	}
+	
+	$(".squareFocus").removeClass("squareFocus");
+	$("#answer").html("");
+	
+	updateAllShuffleBackground();
+}
+
+function showBestPlay(best, map){
+
+	if( map == undefined ){
+		map = best.map;
+	}
+
+	$(".squareFocus").removeClass("squareFocus");
+	
+	$("#shuffle_" + best.from[0] + "_" + best.from[1] ).addClass("squareFocus");
+	$("#shuffle_" + best.to[0] + "_" + best.to[1] ).addClass("squareFocus");
+	
+	createAnswerShuffle( map );
+	
+	$("#answer_" + best.from[0] + "_" + best.from[1] ).addClass("squareFocus");
+	$("#answer_" + best.to[0] + "_" + best.to[1] ).addClass("squareFocus");
+}
+
+function removePipes( name ){
+	return name.replace(/(\||)/g, '');
+}
+
+function destroyObjects( map ){
+	var hasModification = true;
+	var destroyedObjects = 0;
+	var wd = 0;
+	var ySum = 0;
+	var xSum = 0;
+	
+	var first = true;
+	
+	while( hasModification ){
+		hasModification = false;
+		if( wd++ > 100 ){
+			console.log("ERROR!");
+			break;
+		}
+
+		var toDestroy = [];
+		for( var i = 0; i < 6; i++ ){
+			for( var j = 0; j < 6; j++ ){
+				var obj = removePipes( map[i][j] );
+				
+				if( obj == "" || obj == "WOOD" || obj == "STEEL" ) continue;
+				//verify horizontally
+				if( j <= 3 ){
+					 if( obj == removePipes( map[i][j+1] ) && obj == removePipes( map[i][j+2] ) ){
+	/*
+						console.log( "HHH" );
+						console.log( "\tI: " + i + " j: " + j );
+						console.log( "\t1: " + map[i][j] );
+						console.log( "\t2: " + map[i][j+1] );
+						console.log( "\t3: " + map[i][j+2] );
+	*/
+						hasModification = true;
+					 
+						var d = [];
+						d.push( [i, j] );
+						d.push( [i, j+1] );
+						d.push( [i, j+2] );
+						
+						//verify if has more than 3 equals
+						var col = j+3;
+						
+						while( col <= 5 && obj == removePipes( map[i][col] ) ){ 
+							d.push( [i, col] );
+							col++; 
+						}
+						
+						toDestroy.push( d );
+					 }
+				}
+				
+				//verify vertically
+				if( i <= 3 ){
+					if( obj == removePipes( map[i+1][j] ) && obj == removePipes( map[i+2][j] ) ){
+	/*
+						console.log( "VVV" );
+						console.log( "\tI: " + i + " j: " + j );
+						console.log( "\t1: " + map[i][j] );
+						console.log( "\t2: " + map[i+1][j] );
+						console.log( "\t3: " + map[i+2][j] );
+	*/
+						hasModification = true;
+					 
+						var d = [];
+						d.push( [i, j] );
+						d.push( [i+1, j] );
+						d.push( [i+2, j] );
+						
+						//verify if has more than 3 equals
+						var line = i+3;
+						
+						while( line <= 5 && obj == removePipes( map[line][j] ) ){ 
+							d.push( [line, j] );
+							line++; 
+						}
+						
+						toDestroy.push( d );
+					 }
+				}
+			}
+		}
+
+		if( first ){
+			var x, y;
+			var woodBlocks = [];
+			
+			for( var i = 0; i < toDestroy.length; i++ ){
+				var temp = toDestroy[i];
+				for( var j = 0; j < temp.length; j++ ){
+					var d = temp[j];
+					x = d[1] - 1;
+					y = d[0];
+					if( x >= 0 ){
+						if( map[y][x] == "WOOD"){
+							woodBlocks.push( [y, x] );
+						}
+					}
+					
+					x = d[1];
+					y = d[0] - 1;
+					
+					if( y >= 0 ){
+						if( map[y][x] == "WOOD"){
+							woodBlocks.push( [y, x] );
+						}
+					}
+					
+					x = d[1] + 1;
+					y = d[0];
+					
+					if( x < 6 ){
+						if( map[y][x] == "WOOD"){
+							woodBlocks.push( [y, x] );
+						}
+					}
+					
+					x = d[1];
+					y = d[0] + 1;
+					
+					if( y < 6 ){
+						if( map[y][x] == "WOOD"){
+							woodBlocks.push( [y, x] );
+						}
+					}
+				}
+			}
+
+			toDestroy.push( woodBlocks );		
+		}
+		
+		if( hasModification ){
+
+			for( var i = 0; i < toDestroy.length; i++ ){
+				var d = toDestroy[i];
+				
+				for( var j = 0; j < d.length; j++ ){
+					var square = d[j];
+					
+					if( map[ square[0] ][ square[1] ] != "" ){
+						destroyedObjects++;
+						ySum += square[0];
+						xSum += square[1];
+						
+						if( map[ square[0] ][ square[1] ].indexOf("|") > -1 ){
+							map[ square[0] ][ square[1] ] = map[ square[0] ][ square[1] ].replace(/(\||)/g, '');
+						}else{
+							map[ square[0] ][ square[1] ] = "";
+						}
+//						console.log("Destroying I: " + square[0] + " j: " + square[1] ); 
+					}
+				}
+			}
+			
+			var hasDrops = true;
+			while( hasDrops ){
+				hasDrops = false;
+				for( var i = 0; i < 5; i++ ){
+					for( var j = 0; j < 6; j++ ){
+						var obj = map[i][j];
+						
+						if( obj != "" && obj.indexOf("|") == -1 && map[i+1][j] == "" ){
+							hasDrops = true;
+							map[i][j] = "";
+							map[i+1][j] = obj;
+						}
+					}
+				}
+			}		
+		}
+		
+		//first = false;
+	}
+	//console.log( "Destroy: " + destroyedObjects + " ySum: " + ySum + " xSum: " + xSum );
+	return { destroyedObjects: destroyedObjects, ySum: ySum, xSum: xSum };
+}
+
+var firstClickPaintShuffle = true;;
+
+function paintShuffle( o ){
+	var obj = $(o);
+	
+	paintPokemon = obj.parent().parent().find("input:first").val();
+	
+	if( firstClickPaintShuffle ){
+		alert("Click in the shuffle to apply the desired pokemon");
+		
+		$(".shuffleInput").css("cursor", "pointer");
+	}
+	
+	
+	firstClickPaintShuffle = false;
+}
+
+function getRandomInt (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function fillRandom(){
+	var randomValues = ["A", "B", "C", "D", "E", "F"];
+
+	for( var i = 0; i < 6; i++ ){
+		for( var j = 0; j < 6; j++ ){
+			$("#shuffle_" + i + "_" + j ).val( randomValues[ getRandomInt(0, randomValues.length - 1) ] );
+		}
+	}
+	
+}
+
+function fillExample(){
+	//FROM: http://static3.gamespot.com/uploads/scale_small/1544/15443861/2781191-b7uoqe0cyaaawmv.jpg
+	$("#shuffle_0_0").val("STEEL");
+	$("#shuffle_0_1").val("STEEL");
+	$("#shuffle_0_2").val("STEEL");
+	$("#shuffle_0_3").val("STEEL");
+	$("#shuffle_0_4").val("STEEL");
+	$("#shuffle_0_5").val("STEEL");
+	
+	$("#shuffle_1_0").val("WOOD");
+	$("#shuffle_1_1").val("WOOD");
+	$("#shuffle_1_2").val("WOOD");
+	$("#shuffle_1_3").val("WOOD");
+	$("#shuffle_1_4").val("WOOD");
+	$("#shuffle_1_5").val("WOOD");
+	
+	$("#shuffle_2_0").val("B");
+	$("#shuffle_2_1").val("E");
+	$("#shuffle_2_2").val("|S|");
+	$("#shuffle_2_3").val("|S|");
+	$("#shuffle_2_4").val("C");
+	$("#shuffle_2_5").val("C");
+	
+	$("#shuffle_3_0").val("C");
+	$("#shuffle_3_1").val("C");
+	$("#shuffle_3_2").val("B");
+	$("#shuffle_3_3").val("C");
+	$("#shuffle_3_4").val("S");
+	$("#shuffle_3_5").val("S");
+	
+	$("#shuffle_4_0").val("WOOD");
+	$("#shuffle_4_1").val("WOOD");
+	$("#shuffle_4_2").val("WOOD");
+	$("#shuffle_4_3").val("WOOD");
+	$("#shuffle_4_4").val("WOOD");
+	$("#shuffle_4_5").val("WOOD");
+	
+	$("#shuffle_5_0").val("STEEL");
+	$("#shuffle_5_1").val("STEEL");
+	$("#shuffle_5_2").val("STEEL");
+	$("#shuffle_5_3").val("STEEL");
+	$("#shuffle_5_4").val("STEEL");
+	$("#shuffle_5_5").val("STEEL");
+	
+	$("#legendTable").find("tr").eq(1).find("input").eq(0).val("B");
+	$("#legendTable").find("tr").eq(1).find("select").eq(0).find("option").eq(1).attr("selected", "selected");
+	$("#legendTable").find("tr").eq(1).find("input").eq(1).val("40");
+	
+	$("#legendTable").find("tr").eq(2).find("input").eq(0).val("C");
+	$("#legendTable").find("tr").eq(2).find("select").eq(0).find("option").eq(5).attr("selected", "selected");
+	$("#legendTable").find("tr").eq(2).find("input").eq(1).val("40");
+
+	$("#legendTable").find("tr").eq(3).find("input").eq(0).val("S");
+	$("#legendTable").find("tr").eq(3).find("select").eq(0).find("option").eq(8).attr("selected", "selected");
+	$("#legendTable").find("tr").eq(3).find("input").eq(1).val("40");
+	
+	$("#legendTable").find("tr").eq(4).find("input").eq(0).val("E");
+	$("#legendTable").find("tr").eq(4).find("select").eq(0).find("option").eq(15).attr("selected", "selected");
+	$("#legendTable").find("tr").eq(4).find("input").eq(1).val("40");
+	
+	updateAllShuffleBackground();
+}
+
+function createPokemonDataBase(){
+	pokemonDataBase = [];
+
+addPokemonToDataBase('#1','http://www.serebii.net/shuffle/pokemon/001.png','Bulbasaur','grass','40','Power of 4','Puerto Blanco - Stage 2','75%');
+addPokemonToDataBase('#2','http://www.serebii.net/shuffle/pokemon/002.png','Ivysaur','grass','50','Vitality Drain','Rainbow Park - Stage 59','7%');
+addPokemonToDataBase('#3','http://www.serebii.net/shuffle/pokemon/003.png','Venusaur','grass','60','Vitality Drain','Expert Stages - Stage EX7','1%');
+addPokemonToDataBase('#3','http://www.serebii.net/shuffle/pokemon/003-m.png','Mega Venusaur','grass','60','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#4','http://www.serebii.net/shuffle/pokemon/004.png','Charmander','fire','40','Power of 4','Puerto Blanco - Stage 4','30%');
+addPokemonToDataBase('#5','http://www.serebii.net/shuffle/pokemon/005.png','Charmeleon','fire','50','Burn','Rainbow Park - Stage 55','7%');
+addPokemonToDataBase('#6','http://www.serebii.net/shuffle/pokemon/006.png','Charizard','fire','60','Burn','Expert Stages - Stage EX9','1%');
+addPokemonToDataBase('#6','http://www.serebii.net/shuffle/pokemon/006-m.png','Mega Charizard','fire','60','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#7','http://www.serebii.net/shuffle/pokemon/007.png','Squirtle','water','40','Power of 4','Puerto Blanco - Stage 3','50%');
+addPokemonToDataBase('#8','http://www.serebii.net/shuffle/pokemon/008.png','Wartortle','water','50','Stabilize','Rainbow Park - Stage 57','7%');
+addPokemonToDataBase('#9','http://www.serebii.net/shuffle/pokemon/009.png','Blastoise','water','60','Stabilize+','Expert Stages - Stage EX8','1%');
+addPokemonToDataBase('#9','http://www.serebii.net/shuffle/pokemon/009-m.png','Mega Blastoise','water','60','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#10','http://www.serebii.net/shuffle/pokemon/016.png','Pidgey','flying','30','Opportunist','Puerto Blanco - Stage 6','60%');
+addPokemonToDataBase('#11','http://www.serebii.net/shuffle/pokemon/017.png','Pidgeotto','flying','50','Flap','Isla Azul - Stage 44','60%');
+addPokemonToDataBase('#12','http://www.serebii.net/shuffle/pokemon/018.png','Pidgeot','flying','60','Flap','Jungle Verde - Stage 137','7%');
+addPokemonToDataBase('#13','http://www.serebii.net/shuffle/pokemon/677.png','Espurr','psychic','40','Opportunist','Puerto Blanco - Stage 1','75%');
+addPokemonToDataBase('#14','http://www.serebii.net/shuffle/pokemon/678.png','Meowstic','psychic','50','Mega Boost','Galerie Rouge - Stage 67','35%');
+addPokemonToDataBase('#14','http://www.serebii.net/shuffle/pokemon/678-f.png','Meowstic2','psychic','50','Mega Boost','Sweet Strasse  - Stage 81','45%');
+addPokemonToDataBase('#15','http://www.serebii.net/shuffle/pokemon/172.png','Pichu','electric','30','Opportunist','Puerto Blanco - Stage 8','7%');
+addPokemonToDataBase('#16','http://www.serebii.net/shuffle/pokemon/025.png','Pikachu','electric','50','Paralyze','Night Festival - Stage 23','30%');
+addPokemonToDataBase('#17','http://www.serebii.net/shuffle/pokemon/026.png','Raichu','electric','60','Paralyze','Silbern Museum  - Stage 103','3%');
+addPokemonToDataBase('#18','http://www.serebii.net/shuffle/pokemon/175.png','Togepi','fairy','30','Opportunist','Puerto Blanco - Stage 7','20%');
+addPokemonToDataBase('#19','http://www.serebii.net/shuffle/pokemon/176.png','Togetic','fairy','50','Pixie Power','Galerie Rouge - Stage 68','60%');
+addPokemonToDataBase('#20','http://www.serebii.net/shuffle/pokemon/468.png','Togekiss','fairy','60','Pixie Power','Jungle Verde - Stage 147','10%');
+addPokemonToDataBase('#21','http://www.serebii.net/shuffle/pokemon/438.png','Bonsly','rock','40','Opportunist','Galerie Rouge - Stage 61','70%');
+addPokemonToDataBase('#22','http://www.serebii.net/shuffle/pokemon/185.png','Sudowoodo','rock','60','Opportunist','Silbern Museum  - Stage 93','50%');
+addPokemonToDataBase('#23','http://www.serebii.net/shuffle/pokemon/133.png','Eevee','normal','40','Mega Boost','Puerto Blanco - Stage 5','20%');
+addPokemonToDataBase('#24','http://www.serebii.net/shuffle/pokemon/134.png','Vaporeon','water','50','Mega Boost','Rainbow Park - Stage 54','5%');
+addPokemonToDataBase('#25','http://www.serebii.net/shuffle/pokemon/135.png','Jolteon','electric','50','Mega Boost','Mt. Vinter - Stage 112','5%');
+addPokemonToDataBase('#26','http://www.serebii.net/shuffle/pokemon/136.png','Flareon','fire','50','Mega Boost','Castle Noapte  - Stage 123','5%');
+addPokemonToDataBase('#27','http://www.serebii.net/shuffle/pokemon/196.png','Espeon','psychic','50','Mega Boost','Galerie Rouge - Stage 71','5%');
+addPokemonToDataBase('#28','http://www.serebii.net/shuffle/pokemon/197.png','Umbreon','dark','50','Mega Boost','Galerie Rouge - Stage 70','5%');
+addPokemonToDataBase('#29','http://www.serebii.net/shuffle/pokemon/470.png','Leafeon','grass','50','Mega Boost','Jungle Verde - Stage 142','5%');
+addPokemonToDataBase('#30','http://www.serebii.net/shuffle/pokemon/471.png','Glaceon','ice','50','Mega Boost','Mt. Vinter - Stage 114','5%');
+addPokemonToDataBase('#31','http://www.serebii.net/shuffle/pokemon/700.png','Sylveon','fairy','50','Mega Boost','Sweet Strasse  - Stage 79','5%');
+addPokemonToDataBase('#32','http://www.serebii.net/shuffle/pokemon/531.png','Audino','normal','50','Opportunist','Puerto Blanco - Stage 9','60%');
+addPokemonToDataBase('#32','http://www.serebii.net/shuffle/pokemon/531-m.png','Mega Audino','normal','50','undefined','Puerto Blanco - Stage 10','undefined');
+addPokemonToDataBase('#33','http://www.serebii.net/shuffle/pokemon/359.png','Absol','dark','60','Mind Zap','Expert Stages - Stage EX1','1%');
+addPokemonToDataBase('#33','http://www.serebii.net/shuffle/pokemon/359-m.png','Mega Absol','dark','60','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#34','http://www.serebii.net/shuffle/pokemon/509.png','Purrloin','dark','40','Opportunist','Sandy Bazaar - Stage 13','70%');
+addPokemonToDataBase('#35','http://www.serebii.net/shuffle/pokemon/510.png','Liepard','dark','60','Counterattack','Sweet Strasse  - Stage 87','12%');
+addPokemonToDataBase('#36','http://www.serebii.net/shuffle/pokemon/179.png','Mareep','electric','30','Opportunist','Sandy Bazaar - Stage 12','40%');
+addPokemonToDataBase('#37','http://www.serebii.net/shuffle/pokemon/180.png','Flaaffy','electric','50','Opportunist','Rainbow Park - Stage 53','70%');
+addPokemonToDataBase('#38','http://www.serebii.net/shuffle/pokemon/181.png','Ampharos','electric','70','Dancing Dragons','Castle Noapte  - Stage 130','2%');
+addPokemonToDataBase('#38','http://www.serebii.net/shuffle/pokemon/181-m.png','Mega Ampharos','electric','70','undefined','Silvern Museum - Stage 105','undefined');
+addPokemonToDataBase('#39','http://www.serebii.net/shuffle/pokemon/479.png','Rotom','electric','60','Paralyze','Expert Stages - Stage EX2','1%');
+addPokemonToDataBase('#39','http://www.serebii.net/shuffle/pokemon/479-h.png','Rotom2','fire','50','Mega Boost','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#39','http://www.serebii.net/shuffle/pokemon/479-w.png','Rotom2','water','50','Mega Boost','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#39','http://www.serebii.net/shuffle/pokemon/479-f.png','Rotom2','ice','50','Mega Boost','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#39','http://www.serebii.net/shuffle/pokemon/479-s.png','Rotom2','flying','50','Mega Boost','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#39','http://www.serebii.net/shuffle/pokemon/479-m.png','Rotom2','grass','50','Mega Boost','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#40','http://www.serebii.net/shuffle/pokemon/440.png','Happiny','normal','30','Opportunist','Sandy Bazaar - Stage 11','70%');
+addPokemonToDataBase('#41','http://www.serebii.net/shuffle/pokemon/113.png','Chansey','normal','60','Mega Boost','Sweet Strasse  - Stage 88','10%');
+addPokemonToDataBase('#42','http://www.serebii.net/shuffle/pokemon/242.png','Blissey','normal','70','Power of 5','Mt. Vinter - Stage 115','5%');
+addPokemonToDataBase('#43','http://www.serebii.net/shuffle/pokemon/333.png','Swablu','flying','50','Opportunist','Isla Azul - Stage 34','40%');
+addPokemonToDataBase('#44','http://www.serebii.net/shuffle/pokemon/334.png','Altaria','dragon','60','Eject','Mt. Vinter - Stage 118','30%');
+addPokemonToDataBase('#44','http://www.serebii.net/shuffle/pokemon/334-m.png','Mega Altaria','dragon','60','undefined','Galerie Rouge - Stage 75','undefined');
+addPokemonToDataBase('#45','http://www.serebii.net/shuffle/pokemon/231.png','Phanpy','ground','50','Opportunist','Sandy Bazaar - Stage 15','30%');
+addPokemonToDataBase('#46','http://www.serebii.net/shuffle/pokemon/232.png','Donphan','ground','60','Quake','Silbern Museum  - Stage 101','20%');
+addPokemonToDataBase('#47','http://www.serebii.net/shuffle/pokemon/214.png','Heracross','bug','70','Crowd Control','Jungle Verde - Stage 148','5%');
+addPokemonToDataBase('#47','http://www.serebii.net/shuffle/pokemon/214-m.png','Mega Heracross','bug','70','undefined','Pedra Valley - Stage 210','undefined');
+addPokemonToDataBase('#48','http://www.serebii.net/shuffle/pokemon/029.png','Nidoran?','poison','40','Opportunist','Sandy Bazaar - Stage 16','70%');
+addPokemonToDataBase('#49','http://www.serebii.net/shuffle/pokemon/030.png','Nidorina','poison','50','Opportunist','Silbern Museum  - Stage 95','15%');
+addPokemonToDataBase('#50','http://www.serebii.net/shuffle/pokemon/031.png','Nidoqueen','poison','70','Power of 4','Jungle Verde - Stage 140','5%');
+addPokemonToDataBase('#51','http://www.serebii.net/shuffle/pokemon/032.png','Nidoran?2','poison','40','Opportunist','Sandy Bazaar - Stage 17','20%');
+addPokemonToDataBase('#52','http://www.serebii.net/shuffle/pokemon/033.png','Nidorino','poison','50','Opportunist','Silbern Museum  - Stage 96','45%');
+addPokemonToDataBase('#53','http://www.serebii.net/shuffle/pokemon/034.png','Nidoking','poison','70','Power of 5','Jungle Verde - Stage 141','10%');
+addPokemonToDataBase('#54','http://www.serebii.net/shuffle/pokemon/427.png','Buneary','normal','40','Opportunist','Night Festival - Stage 21','50%');
+addPokemonToDataBase('#55','http://www.serebii.net/shuffle/pokemon/428.png','Lopunny','normal','50','Opportunist','Rainbow Park - Stage 52','35%');
+addPokemonToDataBase('#55','http://www.serebii.net/shuffle/pokemon/428-m.png','Mega Lopunny','normal','50','undefined','Rainbow Park - Stage 60','undefined');
+addPokemonToDataBase('#56','http://www.serebii.net/shuffle/pokemon/707.png','Klefki','steel','60','Block Smash','Sandy Bazaar - Stage 18','5%');
+addPokemonToDataBase('#57','http://www.serebii.net/shuffle/pokemon/115.png','Kangaskhan','normal','50','Power of 4','Sandy Bazaar - Stage 19','70%');
+addPokemonToDataBase('#57','http://www.serebii.net/shuffle/pokemon/115-m.png','Mega Kangaskhan','normal','50','undefined','Puerto Blanco - Stage 20','undefined');
+addPokemonToDataBase('#58','http://www.serebii.net/shuffle/pokemon/298.png','Azurill','fairy','30','Opportunist','Isla Azul - Stage 32','60%');
+addPokemonToDataBase('#59','http://www.serebii.net/shuffle/pokemon/183.png','Marill','fairy','40','Opportunist','Isla Azul - Stage 40','60%');
+addPokemonToDataBase('#60','http://www.serebii.net/shuffle/pokemon/184.png','Azumarill','fairy','60','Opportunist','Sweet Strasse  - Stage 76','80%');
+addPokemonToDataBase('#61','http://www.serebii.net/shuffle/pokemon/037.png','Vulpix','fire','40','Opportunist','Isla Azul - Stage 42','30%');
+addPokemonToDataBase('#62','http://www.serebii.net/shuffle/pokemon/038.png','Ninetales','fire','70','Block Smash','Mt. Vinter - Stage 117','25%');
+addPokemonToDataBase('#63','http://www.serebii.net/shuffle/pokemon/570.png','Zorua','dark','50','Sinister Power','Rainbow Park - Stage 50','10%');
+addPokemonToDataBase('#64','http://www.serebii.net/shuffle/pokemon/571.png','Zoroark','dark','70','Sinister Power','Castle Noapte  - Stage 129','5%');
+addPokemonToDataBase('#65','http://www.serebii.net/shuffle/pokemon/607.png','Litwick','ghost','40','Astonish','Night Festival - Stage 25','45%');
+addPokemonToDataBase('#66','http://www.serebii.net/shuffle/pokemon/608.png','Lampent','ghost','50','Mega Boost','Castle Noapte  - Stage 122','25%');
+addPokemonToDataBase('#67','http://www.serebii.net/shuffle/pokemon/609.png','Chandelure','ghost','60','Mega Boost','Castle Noapte  - Stage 134','50%');
+addPokemonToDataBase('#68','http://www.serebii.net/shuffle/pokemon/433.png','Chingling','psychic','40','Opportunist','Night Festival - Stage 26','80%');
+addPokemonToDataBase('#69','http://www.serebii.net/shuffle/pokemon/358.png','Chimecho','psychic','60','Barrier Bash','Silbern Museum  - Stage 100','70%');
+addPokemonToDataBase('#70','http://www.serebii.net/shuffle/pokemon/684.png','Swirlix','fairy','50','Opportunist','Night Festival - Stage 27','70%');
+addPokemonToDataBase('#71','http://www.serebii.net/shuffle/pokemon/685.png','Slurpuff','fairy','60','Opportunist','Sweet Strasse  - Stage 86','25%');
+addPokemonToDataBase('#72','http://www.serebii.net/shuffle/pokemon/313.png','Volbeat','bug','50','Crowd Control','Night Festival - Stage 28','30%');
+addPokemonToDataBase('#73','http://www.serebii.net/shuffle/pokemon/314.png','Illumise','bug','50','Swap','Night Festival - Stage 29','30%');
+addPokemonToDataBase('#74','http://www.serebii.net/shuffle/pokemon/302.png','Sableye','dark','50','Risk Taker','Night Festival - Stage 24','55%');
+addPokemonToDataBase('#74','http://www.serebii.net/shuffle/pokemon/302-m.png','Mega Sableye','dark','50','undefined','Night Festival - Stage 30','undefined');
+addPokemonToDataBase('#75','http://www.serebii.net/shuffle/pokemon/283.png','Surskit','bug','40','Opportunist','Isla Azul - Stage 35','60%');
+addPokemonToDataBase('#76','http://www.serebii.net/shuffle/pokemon/284.png','Masquerain','bug','60','Opportunist','Sweet Strasse  - Stage 82','70%');
+addPokemonToDataBase('#77','http://www.serebii.net/shuffle/pokemon/447.png','Riolu','fighting','40','Heavy Hitter','Isla Azul - Stage 33','3%');
+addPokemonToDataBase('#78','http://www.serebii.net/shuffle/pokemon/448.png','Lucario','fighting','70','Pummel','Expert Stages - Stage EX3','1%');
+addPokemonToDataBase('#78','http://www.serebii.net/shuffle/pokemon/448-m.png','Mega Lucario','fighting','70','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#79','http://www.serebii.net/shuffle/pokemon/276.png','Taillow','flying','40','Rock Break','Isla Azul - Stage 36','70%');
+addPokemonToDataBase('#80','http://www.serebii.net/shuffle/pokemon/277.png','Swellow','flying','60','Cloud Clear','Galerie Rouge - Stage 73','70%');
+addPokemonToDataBase('#81','http://www.serebii.net/shuffle/pokemon/079.png','Slowpoke','psychic','50','Stabilize','Isla Azul - Stage 31','20%');
+addPokemonToDataBase('#82','http://www.serebii.net/shuffle/pokemon/080.png','Slowbro','psychic','60','Barrier Bash','Galerie Rouge - Stage 69','8%');
+addPokemonToDataBase('#82','http://www.serebii.net/shuffle/pokemon/080-m.png','Mega Slowbro','psychic','60','undefined','Isla Azul - Stage 45','undefined');
+addPokemonToDataBase('#83','http://www.serebii.net/shuffle/pokemon/199.png','Slowking','psychic','60','Power of 5','Castle Noapte  - Stage 132','2%');
+addPokemonToDataBase('#84','http://www.serebii.net/shuffle/pokemon/052.png','Meowth','normal','40','Mega Boost','Isla Azul - Stage 37','15%');
+addPokemonToDataBase('#85','http://www.serebii.net/shuffle/pokemon/053.png','Persian','normal','60','Brute Force','Castle Noapte  - Stage 126','5%');
+addPokemonToDataBase('#86','http://www.serebii.net/shuffle/pokemon/222.png','Corsola','water','50','Eject','Isla Azul - Stage 39','70%');
+addPokemonToDataBase('#87','http://www.serebii.net/shuffle/pokemon/453.png','Croagunk','poison','50','Prank','Isla Azul - Stage 38','60%');
+addPokemonToDataBase('#88','http://www.serebii.net/shuffle/pokemon/454.png','Toxicroak','poison','60','Prank','Jungle Verde - Stage 146','25%');
+addPokemonToDataBase('#89','http://www.serebii.net/shuffle/pokemon/252.png','Treecko','grass','50','Sleep Charm','Night Festival - Stage 22','5%');
+addPokemonToDataBase('#90','http://www.serebii.net/shuffle/pokemon/253.png','Grovyle','grass','60','Sleep Charm','Galerie Rouge - Stage 72','7%');
+addPokemonToDataBase('#91','http://www.serebii.net/shuffle/pokemon/254.png','Sceptile','grass','70','Vitality Drain','Expert Stages - Stage EX11','1%');
+addPokemonToDataBase('#92','http://www.serebii.net/shuffle/pokemon/255.png','Torchic','fire','50','Pyre','Sandy Bazaar - Stage 14','5%');
+addPokemonToDataBase('#93','http://www.serebii.net/shuffle/pokemon/256.png','Combusken','fire','60','Pyre','Galerie Rouge - Stage 66','7%');
+addPokemonToDataBase('#94','http://www.serebii.net/shuffle/pokemon/257.png','Blaziken','fire','70','Hitting Streak','Expert Stages - Stage EX12','1%');
+addPokemonToDataBase('#94','http://www.serebii.net/shuffle/pokemon/257-m.png','Mega Blaziken','fire','70','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#95','http://www.serebii.net/shuffle/pokemon/258.png','Mudkip','water','50','Stabilize','Isla Azul - Stage 41','10%');
+addPokemonToDataBase('#96','http://www.serebii.net/shuffle/pokemon/259.png','Marshtomp','water','60','Eject','Galerie Rouge - Stage 63','7%');
+addPokemonToDataBase('#97','http://www.serebii.net/shuffle/pokemon/260.png','Swampert','water','70','Hitting Streak','Expert Stages - Stage EX13','1%');
+addPokemonToDataBase('#97','http://www.serebii.net/shuffle/pokemon/260-m.png','Mega Swampert','water','70','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#98','http://www.serebii.net/shuffle/pokemon/131.png','Lapras','water','50','Power of 4','Isla Azul - Stage 43','10%');
+addPokemonToDataBase('#99','http://www.serebii.net/shuffle/pokemon/572.png','Minccino','normal','50','Opportunist','Rainbow Park - Stage 46','70%');
+addPokemonToDataBase('#100','http://www.serebii.net/shuffle/pokemon/573.png','Cinccino','normal','60','Opportunist','Mt. Vinter - Stage 113','40%');
+addPokemonToDataBase('#101','http://www.serebii.net/shuffle/pokemon/582.png','Vanillite','ice','40','Opportunist','Rainbow Park - Stage 47','50%');
+addPokemonToDataBase('#102','http://www.serebii.net/shuffle/pokemon/583.png','Vanillish','ice','50','Opportunist','Mt. Vinter - Stage 111','65%');
+addPokemonToDataBase('#103','http://www.serebii.net/shuffle/pokemon/584.png','Vanilluxe','ice','60','Freeze','Mt. Vinter - Stage 119','45%');
+addPokemonToDataBase('#104','http://www.serebii.net/shuffle/pokemon/441.png','Chatot','flying','60','Flap','Rainbow Park - Stage 48','35%');
+addPokemonToDataBase('#105','http://www.serebii.net/shuffle/pokemon/610.png','Axew','dragon','50','Dragon Talon','Rainbow Park - Stage 49','15%');
+addPokemonToDataBase('#106','http://www.serebii.net/shuffle/pokemon/611.png','Fraxure','dragon','60','Dragon Talon','Silbern Museum  - Stage 102','35%');
+addPokemonToDataBase('#107','http://www.serebii.net/shuffle/pokemon/612.png','Haxorus','dragon','70','Dragon Talon','Jungle Verde - Stage 149','65%');
+addPokemonToDataBase('#108','http://www.serebii.net/shuffle/pokemon/701.png','Hawlucha','fighting','50','Rock Break','Rainbow Park - Stage 58','30%');
+addPokemonToDataBase('#109','http://www.serebii.net/shuffle/pokemon/418.png','Buizel','water','50','Barrier Bash','Rainbow Park - Stage 56','60%');
+addPokemonToDataBase('#110','http://www.serebii.net/shuffle/pokemon/419.png','Floatzel','water','60','Stabilize','Jungle Verde - Stage 145','50%');
+addPokemonToDataBase('#111','http://www.serebii.net/shuffle/pokemon/303.png','Mawile','steel','50','Steely Resolve','Rainbow Park - Stage 51','15%');
+addPokemonToDataBase('#111','http://www.serebii.net/shuffle/pokemon/303-m.png','Mega Mawile','steel','50','undefined','Sweet Strasse - Stage 90','undefined');
+addPokemonToDataBase('#112','http://www.serebii.net/shuffle/pokemon/092.png','Gastly','ghost','50','Spookify','Galerie Rouge - Stage 62','15%');
+addPokemonToDataBase('#113','http://www.serebii.net/shuffle/pokemon/093.png','Haunter','ghost','60','Quirky','Castle Noapte  - Stage 121','10%');
+addPokemonToDataBase('#114','http://www.serebii.net/shuffle/pokemon/094.png','Gengar','ghost','70','Power of 5','Castle Noapte  - Stage 125','2%');
+addPokemonToDataBase('#114','http://www.serebii.net/shuffle/pokemon/094-m.png','Mega Gengar','ghost','70','undefined','Castle Nopate - Stage 135','undefined');
+addPokemonToDataBase('#115','http://www.serebii.net/shuffle/pokemon/104.png','Cubone','ground','50','Rock Break','Galerie Rouge - Stage 74','15%');
+addPokemonToDataBase('#116','http://www.serebii.net/shuffle/pokemon/105.png','Marowak','ground','60','Damage Streak','Jungle Verde - Stage 139','20%');
+addPokemonToDataBase('#117','http://www.serebii.net/shuffle/pokemon/147.png','Dratini','dragon','50','Opportunist','Galerie Rouge - Stage 64','45%');
+addPokemonToDataBase('#118','http://www.serebii.net/shuffle/pokemon/148.png','Dragonair','dragon','60','Dancing Dragons','Mt. Vinter - Stage 109','2%');
+addPokemonToDataBase('#119','http://www.serebii.net/shuffle/pokemon/149.png','Dragonite','dragon','80','Dancing Dragons','Expert Stages - Stage EX10','1%');
+addPokemonToDataBase('#120','http://www.serebii.net/shuffle/pokemon/698.png','Amaura','rock','50','Risk Taker','Galerie Rouge - Stage 65','60%');
+addPokemonToDataBase('#121','http://www.serebii.net/shuffle/pokemon/699.png','Aurorus','rock','70','Damage Streak','Mt. Vinter - Stage 116','60%');
+addPokemonToDataBase('#122','http://www.serebii.net/shuffle/pokemon/619.png','Mienfoo','fighting','50','Hitting Streak','Sweet Strasse  - Stage 77','50%');
+addPokemonToDataBase('#123','http://www.serebii.net/shuffle/pokemon/620.png','Mienshao','fighting','60','Hitting Streak','Mt. Vinter - Stage 110','25%');
+addPokemonToDataBase('#124','http://www.serebii.net/shuffle/pokemon/361.png','Snorunt','ice','40','Freeze','Sweet Strasse  - Stage 78','40%');
+addPokemonToDataBase('#125','http://www.serebii.net/shuffle/pokemon/362.png','Glalie','ice','60','Chill','Mt. Vinter - Stage 108','15%');
+addPokemonToDataBase('#125','http://www.serebii.net/shuffle/pokemon/362-m.png','Mega Glalie','ice','60','undefined','Mt. Vinter - Stage 120','undefined');
+addPokemonToDataBase('#126','http://www.serebii.net/shuffle/pokemon/478.png','Froslass','ice','60','Mega Boost','Castle Noapte  - Stage 128','50%');
+addPokemonToDataBase('#127','http://www.serebii.net/shuffle/pokemon/316.png','Gulpin','poison','50','Opportunist','Sweet Strasse  - Stage 89','55%');
+addPokemonToDataBase('#128','http://www.serebii.net/shuffle/pokemon/317.png','Swalot','poison','60','Opportunist','Castle Noapte  - Stage 124','50%');
+addPokemonToDataBase('#129','http://www.serebii.net/shuffle/pokemon/241.png','Miltank','normal','60','Opportunist','Sweet Strasse  - Stage 80','70%');
+addPokemonToDataBase('#130','http://www.serebii.net/shuffle/pokemon/702.png','Dedenne','electric','60','Mega Boost','Sweet Strasse  - Stage 85','7%');
+addPokemonToDataBase('#131','http://www.serebii.net/shuffle/pokemon/546.png','Cottonee','grass','40','Swap','Sweet Strasse  - Stage 83','60%');
+addPokemonToDataBase('#132','http://www.serebii.net/shuffle/pokemon/547.png','Whimsicott','grass','60','Swap','Jungle Verde - Stage 138','50%');
+addPokemonToDataBase('#133','http://www.serebii.net/shuffle/pokemon/548.png','Petilil','grass','40','Swap','Sweet Strasse  - Stage 84','50%');
+addPokemonToDataBase('#134','http://www.serebii.net/shuffle/pokemon/549.png','Lilligant','grass','60','Sleep Charm','Castle Noapte  - Stage 127','70%');
+addPokemonToDataBase('#135','http://www.serebii.net/shuffle/pokemon/436.png','Bronzor','steel','50','Block Smash','Roseus Center - Stage 298','70%');
+addPokemonToDataBase('#136','http://www.serebii.net/shuffle/pokemon/437.png','Bronzong','steel','70','Block Smash','Castle Noapte  - Stage 133','10%');
+addPokemonToDataBase('#137','http://www.serebii.net/shuffle/pokemon/587.png','Emolga','electric','60','Risk Taker','Silbern Museum  - Stage 92','25%');
+addPokemonToDataBase('#138','http://www.serebii.net/shuffle/pokemon/123.png','Scyther','bug','70','Swarm','Silbern Museum  - Stage 94','40%');
+addPokemonToDataBase('#139','http://www.serebii.net/shuffle/pokemon/212.png','Scizor','bug','70','Swarm','Jungle Verde - Stage 143','5%');
+addPokemonToDataBase('#140','http://www.serebii.net/shuffle/pokemon/703.png','Carbink','rock','60','Damage Streak','Silbern Museum  - Stage 97','60%');
+addPokemonToDataBase('#141','http://www.serebii.net/shuffle/pokemon/538.png','Throh','fighting','60','Power of 5','Silbern Museum  - Stage 98','20%');
+addPokemonToDataBase('#142','http://www.serebii.net/shuffle/pokemon/539.png','Sawk','fighting','60','Power of 4','Silbern Museum  - Stage 99','20%');
+addPokemonToDataBase('#143','http://www.serebii.net/shuffle/pokemon/227.png','Skarmory','steel','60','Steely Resolve','Jungle Verde - Stage 144','35%');
+addPokemonToDataBase('#144','http://www.serebii.net/shuffle/pokemon/225.png','Delibird','ice','50','Chill','Mt. Vinter - Stage 106','25%');
+addPokemonToDataBase('#145','http://www.serebii.net/shuffle/pokemon/618.png','Stunfisk','ground','60','Damage Streak','Jungle Verde - Stage 136','25%');
+addPokemonToDataBase('#146','http://www.serebii.net/shuffle/pokemon/200.png','Misdreavus','ghost','60','Astonish','Mt. Vinter - Stage 107','55%');
+addPokemonToDataBase('#147','http://www.serebii.net/shuffle/pokemon/429.png','Mismagius','ghost','60','Astonish','Castle Noapte  - Stage 131','50%');
+addPokemonToDataBase('#148','http://www.serebii.net/shuffle/pokemon/142.png','Aerodactyl','rock','60','Cloud Clear','Silbern Museum  - Stage 104','15%');
+addPokemonToDataBase('#148','http://www.serebii.net/shuffle/pokemon/142-m.png','Mega Aerodactyl','rock','60','undefined','Wacky Workshop - Stage 180','undefined');
+addPokemonToDataBase('#149','http://www.serebii.net/shuffle/pokemon/144.png','Articuno','ice','70','Power of 4','Expert Stages - Stage EX4','1%');
+addPokemonToDataBase('#150','http://www.serebii.net/shuffle/pokemon/145.png','Zapdos','electric','70','Power of 4','Expert Stages - Stage EX5','1%');
+addPokemonToDataBase('#151','http://www.serebii.net/shuffle/pokemon/146.png','Moltres','fire','70','Power of 4','Expert Stages - Stage EX6','1%');
+addPokemonToDataBase('#152','http://www.serebii.net/shuffle/pokemon/243.png','Raikou','electric','70','Power of 5','Expert Stages - Stage EX16','1%');
+addPokemonToDataBase('#153','http://www.serebii.net/shuffle/pokemon/244.png','Entei','fire','70','Power of 5','Expert Stages - Stage EX14','1%');
+addPokemonToDataBase('#154','http://www.serebii.net/shuffle/pokemon/245.png','Suicune','water','70','Power of 5','Expert Stages - Stage EX15','1%');
+addPokemonToDataBase('#155','http://www.serebii.net/shuffle/pokemon/485.png','Heatran','fire','80','Last-Ditch Effort','Expert Stages - Stage EX17','1%');
+addPokemonToDataBase('#156','http://www.serebii.net/shuffle/pokemon/716.png','Xerneas','fairy','80','Quirky+','Expert Stages - Stage EX18','1%');
+addPokemonToDataBase('#157','http://www.serebii.net/shuffle/pokemon/717.png','Yveltal','dark','80','Power of 5','Expert Stages - Stage EX19','1%');
+addPokemonToDataBase('#158','http://www.serebii.net/shuffle/pokemon/150.png','Mewtwo','psychic','80','Swap','Expert Stages - Stage EX20','1%');
+addPokemonToDataBase('#158','http://www.serebii.net/shuffle/pokemon/150-m.png','Mega Mewtwo','psychic','80','undefined','Jungle Verde - Stage 150','undefined');
+addPokemonToDataBase('#158','http://www.serebii.net/shuffle/pokemon/150.png','Mewtwo2','psychic','80','Swap','Special Stages - Stage SP','100%');
+addPokemonToDataBase('#158','http://www.serebii.net/shuffle/pokemon/150-mx.png','Mega Mewtwo2','fighting','80','undefined','Desert Umbra - Stage 350','undefined');
+addPokemonToDataBase('#159','http://www.serebii.net/shuffle/pokemon/151.png','Mew','psychic','50','Power of 5','Special Stages - Stage EV','10%');
+addPokemonToDataBase('#160','http://www.serebii.net/shuffle/pokemon/382.png','Kyogre','water','70','Rock Break','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#161','http://www.serebii.net/shuffle/pokemon/383.png','Groudon','ground','70','Quake','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#162','http://www.serebii.net/shuffle/pokemon/384.png','Rayquaza','dragon','70','Dragon Talon','Roseus Center - Stage 290','1%');
+addPokemonToDataBase('#162','http://www.serebii.net/shuffle/pokemon/384-m.png','Mega Rayquaza','dragon','70','undefined','Roseus Center - Stage 300','undefined');
+addPokemonToDataBase('#163','http://www.serebii.net/shuffle/pokemon/417.png','Pachirisu','electric','50','Mega Boost','Special Stages - Stage SP','15%');
+addPokemonToDataBase('#164','http://www.serebii.net/shuffle/pokemon/357.png','Tropius','grass','60','Eject','Special Stages - Stage SP','7%');
+addPokemonToDataBase('#165','http://www.serebii.net/shuffle/pokemon/561.png','Sigilyph','psychic','60','Barrier Bash','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#166','http://www.serebii.net/shuffle/pokemon/083.png','Farfetch_d','flying','50','Quirky','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#167','http://www.serebii.net/shuffle/pokemon/621.png','Druddigon','dragon','60','Power of 4','Special Stages - Stage SP','9%');
+addPokemonToDataBase('#168','http://www.serebii.net/shuffle/pokemon/647.png','Keldeo','water','60','Block Smash','Special Stages - Stage SP','15%');
+addPokemonToDataBase('#168','http://www.serebii.net/shuffle/pokemon/647-r.png','Keldeo2','fighting','60','Power of 4+','Special Stages - Stage SP','1-100%');
+addPokemonToDataBase('#169','http://www.serebii.net/shuffle/pokemon/650.png','Chespin','grass','50','Damage Streak','Wacky Workshop - Stage 152','5%');
+addPokemonToDataBase('#170','http://www.serebii.net/shuffle/pokemon/651.png','Quilladin','grass','60','Paralyze','Pedra Valley - Stage 187','2%');
+addPokemonToDataBase('#171','http://www.serebii.net/shuffle/pokemon/652.png','Chesnaught','grass','70','Hitting Streak','Expert Stages - Stage EX22','1%');
+addPokemonToDataBase('#172','http://www.serebii.net/shuffle/pokemon/653.png','Fennekin','fire','50','Burn','Wacky Workshop - Stage 156','5%');
+addPokemonToDataBase('#173','http://www.serebii.net/shuffle/pokemon/654.png','Braixen','fire','60','Stabilize+','Pedra Valley - Stage 189','17%');
+addPokemonToDataBase('#174','http://www.serebii.net/shuffle/pokemon/655.png','Delphox','fire','70','Pyre','Expert Stages - Stage EX23','1%');
+addPokemonToDataBase('#175','http://www.serebii.net/shuffle/pokemon/656.png','Froakie','water','50','Rock Break','Wacky Workshop - Stage 154','5%');
+addPokemonToDataBase('#176','http://www.serebii.net/shuffle/pokemon/657.png','Frogadier','water','60','Power of 5','Pedra Valley - Stage 185','11%');
+addPokemonToDataBase('#177','http://www.serebii.net/shuffle/pokemon/658.png','Greninja','water','70','Mind Zap','Expert Stages - Stage EX24','1%');
+addPokemonToDataBase('#178','http://www.serebii.net/shuffle/pokemon/446.png','Munchlax','normal','50','Risk Taker','Wacky Workshop - Stage 151','55%');
+addPokemonToDataBase('#179','http://www.serebii.net/shuffle/pokemon/143.png','Snorlax','normal','70','Brute Force','Pedra Valley - Stage 183','2%');
+addPokemonToDataBase('#180','http://www.serebii.net/shuffle/pokemon/095.png','Onix','rock','50','Eject','Wacky Workshop - Stage 153','25%');
+addPokemonToDataBase('#181','http://www.serebii.net/shuffle/pokemon/208.png','Steelix','steel','70','Steely Resolve','Pedra Valley - Stage 190','22%');
+addPokemonToDataBase('#181','http://www.serebii.net/shuffle/pokemon/208-m.png','Mega Steelix','steel','70','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#182','http://www.serebii.net/shuffle/pokemon/235.png','Smeargle','normal','30','Block Smash','Wacky Workshop - Stage 155','65%');
+addPokemonToDataBase('#183','http://www.serebii.net/shuffle/pokemon/636.png','Larvesta','bug','50','Cloud Clear','Wacky Workshop - Stage 157','40%');
+addPokemonToDataBase('#184','http://www.serebii.net/shuffle/pokemon/637.png','Volcarona','bug','70','Mega Boost','Pedra Valley - Stage 206','33%');
+addPokemonToDataBase('#185','http://www.serebii.net/shuffle/pokemon/349.png','Feebas','water','30','Opportunist','Wacky Workshop - Stage 158','70%');
+addPokemonToDataBase('#186','http://www.serebii.net/shuffle/pokemon/350.png','Milotic','water','70','Stabilize+','Wacky Workshop - Stage 165','3%');
+addPokemonToDataBase('#187','http://www.serebii.net/shuffle/pokemon/261.png','Poochyena','dark','30','Counterattack','Wacky Workshop - Stage 159','67%');
+addPokemonToDataBase('#188','http://www.serebii.net/shuffle/pokemon/262.png','Mightyena','dark','60','Sinister Power','Wacky Workshop - Stage 173','7%');
+addPokemonToDataBase('#189','http://www.serebii.net/shuffle/pokemon/568.png','Trubbish','poison','50','Mega Boost','Wacky Workshop - Stage 160','44%');
+addPokemonToDataBase('#190','http://www.serebii.net/shuffle/pokemon/569.png','Garbodor','poison','60','Risk Taker','Pedra Valley - Stage 194','45%');
+addPokemonToDataBase('#191','http://www.serebii.net/shuffle/pokemon/449.png','Hippopotas','ground','50','Quake','Wacky Workshop - Stage 161','30%');
+addPokemonToDataBase('#192','http://www.serebii.net/shuffle/pokemon/450.png','Hippowdon','ground','60','Last-Ditch Effort','Pedra Valley - Stage 201','65%');
+addPokemonToDataBase('#193','http://www.serebii.net/shuffle/pokemon/371.png','Bagon','dragon','50','Power of 4','Wacky Workshop - Stage 162','17%');
+addPokemonToDataBase('#194','http://www.serebii.net/shuffle/pokemon/372.png','Shelgon','dragon','60','Damage Streak','Pedra Valley - Stage 188','7%');
+addPokemonToDataBase('#195','http://www.serebii.net/shuffle/pokemon/373.png','Salamence','flying','80','Hitting Streak','Pedra Valley - Stage 209','2%');
+addPokemonToDataBase('#196','http://www.serebii.net/shuffle/pokemon/674.png','Pancham','fighting','50','Mega Boost','Wacky Workshop - Stage 163','20%');
+addPokemonToDataBase('#197','http://www.serebii.net/shuffle/pokemon/675.png','Pangoro','fighting','60','Pummel','Pedra Valley - Stage 193','7%');
+addPokemonToDataBase('#198','http://www.serebii.net/shuffle/pokemon/562.png','Yamask','ghost','50','Quirky','Wacky Workshop - Stage 164','25%');
+addPokemonToDataBase('#199','http://www.serebii.net/shuffle/pokemon/563.png','Cofagrigus','ghost','60','Prank','Pedra Valley - Stage 196','55%');
+addPokemonToDataBase('#200','http://www.serebii.net/shuffle/pokemon/577.png','Solosis','psychic','40','Barrier Bash','Wacky Workshop - Stage 166','36%');
+addPokemonToDataBase('#201','http://www.serebii.net/shuffle/pokemon/578.png','Duosion','psychic','50','Swap','Pedra Valley - Stage 182','12%');
+addPokemonToDataBase('#202','http://www.serebii.net/shuffle/pokemon/579.png','Reuniclus','psychic','60','Swat','Pedra Valley - Stage 197','9%');
+addPokemonToDataBase('#203','http://www.serebii.net/shuffle/pokemon/679.png','Honedge','steel','50','Steely Resolve','Wacky Workshop - Stage 167','22%');
+addPokemonToDataBase('#204','http://www.serebii.net/shuffle/pokemon/680.png','Doublade','steel','60','Hitting Streak','Pedra Valley - Stage 195','12%');
+addPokemonToDataBase('#205','http://www.serebii.net/shuffle/pokemon/681.png','Aegislash','steel','70','Counterattack','Pedra Valley - Stage 207','6%');
+addPokemonToDataBase('#206','http://www.serebii.net/shuffle/pokemon/529.png','Drilbur','ground','50','Damage Streak','Wacky Workshop - Stage 168','45%');
+addPokemonToDataBase('#207','http://www.serebii.net/shuffle/pokemon/530.png','Excadrill','ground','70','Power of 5','Pedra Valley - Stage 205','1%');
+addPokemonToDataBase('#208','http://www.serebii.net/shuffle/pokemon/246.png','Larvitar','rock','50','Risk Taker','Wacky Workshop - Stage 169','24%');
+addPokemonToDataBase('#209','http://www.serebii.net/shuffle/pokemon/247.png','Pupitar','rock','60','Mega Boost','Wacky Workshop - Stage 179','33%');
+addPokemonToDataBase('#210','http://www.serebii.net/shuffle/pokemon/248.png','Tyranitar','rock','80','Eject','Pedra Valley - Stage 200','3%');
+addPokemonToDataBase('#211','http://www.serebii.net/shuffle/pokemon/353.png','Shuppet','ghost','40','Mind Zap','Wacky Workshop - Stage 170','7%');
+addPokemonToDataBase('#212','http://www.serebii.net/shuffle/pokemon/354.png','Banette','ghost','60','Mega Boost','Wacky Workshop - Stage 177','6%');
+addPokemonToDataBase('#212','http://www.serebii.net/shuffle/pokemon/354-m.png','Mega Banette','ghost','60','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#213','http://www.serebii.net/shuffle/pokemon/627.png','Rufflet','flying','50','Flap','Wacky Workshop - Stage 171','40%');
+addPokemonToDataBase('#214','http://www.serebii.net/shuffle/pokemon/628.png','Braviary','flying','70','Sky Blast','Pedra Valley - Stage 204','5%');
+addPokemonToDataBase('#215','http://www.serebii.net/shuffle/pokemon/712.png','Bergmite','ice','50','Freeze','Wacky Workshop - Stage 172','13%');
+addPokemonToDataBase('#216','http://www.serebii.net/shuffle/pokemon/713.png','Avalugg','ice','70','Barrier Bash','Pedra Valley - Stage 203','11%');
+addPokemonToDataBase('#217','http://www.serebii.net/shuffle/pokemon/209.png','Snubbull','fairy','50','Crowd Control','Wacky Workshop - Stage 174','31%');
+addPokemonToDataBase('#218','http://www.serebii.net/shuffle/pokemon/210.png','Granbull','fairy','60','Heavy Hitter','Pedra Valley - Stage 184','66%');
+addPokemonToDataBase('#219','http://www.serebii.net/shuffle/pokemon/108.png','Lickitung','normal','50','Last-Ditch Effort','Wacky Workshop - Stage 175','12%');
+addPokemonToDataBase('#220','http://www.serebii.net/shuffle/pokemon/463.png','Lickilicky','normal','70','Damage Streak','Pedra Valley - Stage 192','29%');
+addPokemonToDataBase('#221','http://www.serebii.net/shuffle/pokemon/532.png','Timburr','fighting','50','Block Smash','Wacky Workshop - Stage 176','21%');
+addPokemonToDataBase('#222','http://www.serebii.net/shuffle/pokemon/533.png','Gurdurr','fighting','60','Cloud Clear','Pedra Valley - Stage 186','33%');
+addPokemonToDataBase('#223','http://www.serebii.net/shuffle/pokemon/534.png','Conkeldurr','fighting','70','Last-Ditch Effort','Pedra Valley - Stage 198','19%');
+addPokemonToDataBase('#224','http://www.serebii.net/shuffle/pokemon/114.png','Tangela','grass','60','Stabilize','Wacky Workshop - Stage 178','52%');
+addPokemonToDataBase('#225','http://www.serebii.net/shuffle/pokemon/465.png','Tangrowth','grass','70','Cloud Clear','Pedra Valley - Stage 199','19%');
+addPokemonToDataBase('#226','http://www.serebii.net/shuffle/pokemon/649.png','Genesect','bug','80','Crowd Control','Expert Stages - Stage EX21','1%');
+addPokemonToDataBase('#227','http://www.serebii.net/shuffle/pokemon/318.png','Carvanha','dark','50','Mega Boost','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#228','http://www.serebii.net/shuffle/pokemon/319.png','Sharpedo','dark','60','Eject','Special Stages - Stage SP','7%');
+addPokemonToDataBase('#228','http://www.serebii.net/shuffle/pokemon/319-m.png','Mega Sharpedo','dark','60','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#229','http://www.serebii.net/shuffle/pokemon/327.png','Spinda','normal','50','Counterattack','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#230','http://www.serebii.net/shuffle/pokemon/420.png','Cherubi','grass','40','Quirky','Special Stages - Stage SP','11%');
+addPokemonToDataBase('#231','http://www.serebii.net/shuffle/pokemon/421.png','Cherrim','grass','60','Quirky+','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#232','http://www.serebii.net/shuffle/pokemon/251.png','Celebi','psychic','50','Stabilize','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#233','http://www.serebii.net/shuffle/pokemon/127.png','Pinsir','bug','70','Power of 4','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#234','http://www.serebii.net/shuffle/pokemon/215.png','Sneasel','dark','60','Prank','Pedra Valley - Stage 181','77%');
+addPokemonToDataBase('#235','http://www.serebii.net/shuffle/pokemon/461.png','Weavile','dark','70','Astonish','Pedra Valley - Stage 202','8%');
+addPokemonToDataBase('#236','http://www.serebii.net/shuffle/pokemon/377.png','Regirock','rock','70','Last-Ditch Effort','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#237','http://www.serebii.net/shuffle/pokemon/378.png','Regice','ice','70','Hitting Streak','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#238','http://www.serebii.net/shuffle/pokemon/379.png','Registeel','steel','70','Paralyze','Special Stages - Stage SP','1%');
+addPokemonToDataBase('#239','http://www.serebii.net/shuffle/pokemon/203.png','Girafarig','psychic','60','Swat','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#240','http://www.serebii.net/shuffle/pokemon/352.png','Kecleon','normal','60','Mind Zap','Special Stages - Stage SP','7%');
+addPokemonToDataBase('#241','http://www.serebii.net/shuffle/pokemon/369.png','Relicanth','rock','60','Mega Boost','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#242','http://www.serebii.net/shuffle/pokemon/213.png','Shuckle','bug','60','Risk Taker','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#243','http://www.serebii.net/shuffle/pokemon/442.png','Spiritomb','ghost','60','Spookify','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#244','http://www.serebii.net/shuffle/pokemon/492.png','Shaymin','grass','70','Sleep Charm','Special Stages - Stage SP','20%');
+addPokemonToDataBase('#244','http://www.serebii.net/shuffle/pokemon/492-s.png','Shaymin2','flying','70','Power of 4+','Special Stages - Stage SP','20%');
+addPokemonToDataBase('#245','http://www.serebii.net/shuffle/pokemon/494.png','Victini','psychic','80','Hitting Streak','Special Stages - Stage SP','2%');
+addPokemonToDataBase('#246','http://www.serebii.net/shuffle/pokemon/522.png','Blitzle','electric','40','Rock Break','Pedra Valley - Stage 191','62%');
+addPokemonToDataBase('#247','http://www.serebii.net/shuffle/pokemon/523.png','Zebstrika','electric','60','Block Smash','Pedra Valley - Stage 208','28%');
+addPokemonToDataBase('#248','http://www.serebii.net/shuffle/pokemon/487.png','Giratina','ghost','80','Power of 4+','Special Stages - Stage SP','1-100%');
+addPokemonToDataBase('#249','http://www.serebii.net/shuffle/pokemon/483.png','Dialga','steel','80','Block Smash+','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#250','http://www.serebii.net/shuffle/pokemon/484.png','Palkia','water','80','Barrier Bash+','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#251','http://www.serebii.net/shuffle/pokemon/309.png','Electrike','electric','40','Hitting Streak','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#252','http://www.serebii.net/shuffle/pokemon/310.png','Manectric','electric','60','Hitting Streak','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#252','http://www.serebii.net/shuffle/pokemon/310-m.png','Mega Manectric','electric','60','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#253','http://www.serebii.net/shuffle/pokemon/234.png','Stantler','normal','60','Sleep Charm','Special Stages - Stage SP','25%');
+addPokemonToDataBase('#254','http://www.serebii.net/shuffle/pokemon/554.png','Darumaka','fire','50','Stabilize','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#255','http://www.serebii.net/shuffle/pokemon/555.png','Darmanitan','fire','60','Burn','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#256','http://www.serebii.net/shuffle/pokemon/489.png','Phione','water','60','Crowd Control','Special Stages - Stage SP','40%');
+addPokemonToDataBase('#257','http://www.serebii.net/shuffle/pokemon/490.png','Manaphy','water','70','Swap+','Special Stages - Stage SP','12%');
+addPokemonToDataBase('#258','http://www.serebii.net/shuffle/pokemon/495.png','Snivy','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#259','http://www.serebii.net/shuffle/pokemon/496.png','Servine','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#260','http://www.serebii.net/shuffle/pokemon/497.png','Serperior','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#261','http://www.serebii.net/shuffle/pokemon/498.png','Tepig','fire','50','Rock Break','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#262','http://www.serebii.net/shuffle/pokemon/499.png','Pignite','fire','60','Heavy Hitter','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#263','http://www.serebii.net/shuffle/pokemon/500.png','Emboar','fire','70','Barrier Bash','Special Stages - Stage SP','1%');
+addPokemonToDataBase('#264','http://www.serebii.net/shuffle/pokemon/501.png','Oshawott','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#265','http://www.serebii.net/shuffle/pokemon/502.png','Dewott','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#266','http://www.serebii.net/shuffle/pokemon/503.png','Samurott','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#267','http://www.serebii.net/shuffle/pokemon/360.png','Wynaut','psychic','30','Stabilize','Special Stages - Stage SP','40%');
+addPokemonToDataBase('#268','http://www.serebii.net/shuffle/pokemon/202.png','Wobbuffet','psychic','60','Counterattack','Special Stages - Stage SP','1%');
+addPokemonToDataBase('#269','http://www.serebii.net/shuffle/pokemon/324.png','Torkoal','fire','60','Quake','Special Stages - Stage SP','20%');
+addPokemonToDataBase('#270','http://www.serebii.net/shuffle/pokemon/335.png','Zangoose','normal','60','Hitting Streak','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#271','http://www.serebii.net/shuffle/pokemon/336.png','Seviper','poison','60','Eject','Special Stages - Stage SP','15%');
+addPokemonToDataBase('#272','http://www.serebii.net/shuffle/pokemon/370.png','Luvdisc','water','50','Power of 4','Special Stages - Stage SP','20%');
+addPokemonToDataBase('#273','http://www.serebii.net/shuffle/pokemon/385.png','Jirachi','steel','70','Mega Boost+','Special Stages - Stage SP','7%');
+addPokemonToDataBase('#274','http://www.serebii.net/shuffle/pokemon/493.png','Arceus','normal','90','Double Normal','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#275','http://www.serebii.net/shuffle/pokemon/488.png','Cresselia','psychic','80','Barrier Bash+','Special Stages - Stage SP','1-100%');
+addPokemonToDataBase('#276','http://www.serebii.net/shuffle/pokemon/676.png','Furfrou','normal','60','Quirky+','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#277','http://www.serebii.net/shuffle/pokemon/120.png','Staryu','water','50','Prank','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#278','http://www.serebii.net/shuffle/pokemon/121.png','Starmie','water','70','Power of 5','Special Stages - Stage SP','6%');
+addPokemonToDataBase('#279','http://www.serebii.net/shuffle/pokemon/443.png','Gible','ground','50','Mega Boost','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#280','http://www.serebii.net/shuffle/pokemon/444.png','Gabite','ground','60','Block Smash','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#281','http://www.serebii.net/shuffle/pokemon/445.png','Garchomp','ground','80','Dragon Talon','Special Stages - Stage SP','15%');
+addPokemonToDataBase('#281','http://www.serebii.net/shuffle/pokemon/445-m.png','Mega Garchomp','ground','80','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#282','http://www.serebii.net/shuffle/pokemon/664.png','Scatterbug','bug','30','Mega Boost','Albens Town - Stage 218','9%');
+addPokemonToDataBase('#283','http://www.serebii.net/shuffle/pokemon/665.png','Spewpa','bug','40','Eject','Albens Town - Stage 219','11%');
+addPokemonToDataBase('#284','http://www.serebii.net/shuffle/pokemon/666.png','Vivillon','bug','60','Astonish','Albens Town - Stage 220','12%');
+addPokemonToDataBase('#285','http://www.serebii.net/shuffle/pokemon/396.png','Starly','flying','30','Crowd Control','Albens Town - Stage 211','11%');
+addPokemonToDataBase('#286','http://www.serebii.net/shuffle/pokemon/397.png','Staravia','flying','50','Mind Zap','Albens Town - Stage 215','11%');
+addPokemonToDataBase('#287','http://www.serebii.net/shuffle/pokemon/398.png','Staraptor','flying','60','Stabilize+','Albens Town - Stage 224','11%');
+addPokemonToDataBase('#288','http://www.serebii.net/shuffle/pokemon/704.png','Goomy','dragon','50','Mega Boost','Albens Town - Stage 213','6%');
+addPokemonToDataBase('#289','http://www.serebii.net/shuffle/pokemon/705.png','Sliggoo','dragon','60','Barrier Bash','Albens Town - Stage 229','13%');
+addPokemonToDataBase('#290','http://www.serebii.net/shuffle/pokemon/706.png','Goodra','dragon','80','Eject+','Expert Stages - Stage EX30','1%');
+addPokemonToDataBase('#291','http://www.serebii.net/shuffle/pokemon/574.png','Gothita','psychic','40','Cloud Clear','Albens Town - Stage 212','15%');
+addPokemonToDataBase('#292','http://www.serebii.net/shuffle/pokemon/575.png','Gothorita','psychic','50','Sleep Charm','Albens Town - Stage 216','15%');
+addPokemonToDataBase('#293','http://www.serebii.net/shuffle/pokemon/576.png','Gothitelle','psychic','60','Quirky+','Albens Town - Stage 228','9%');
+addPokemonToDataBase('#294','http://www.serebii.net/shuffle/pokemon/439.png','Mime Jr.','psychic','50','Quirky','Albens Town - Stage 214','10%');
+addPokemonToDataBase('#295','http://www.serebii.net/shuffle/pokemon/122.png','Mr. Mime','psychic','60','Prank','Albens Town - Stage 226','12%');
+addPokemonToDataBase('#296','http://www.serebii.net/shuffle/pokemon/280.png','Ralts','fairy','30','Prank','Albens Town - Stage 217','1%');
+addPokemonToDataBase('#297','http://www.serebii.net/shuffle/pokemon/281.png','Kirlia','fairy','40','Eject','Albens Town - Stage 223','2%');
+addPokemonToDataBase('#298','http://www.serebii.net/shuffle/pokemon/282.png','Gardevoir','fairy','70','Swap','Albens Town - Stage 238','6%');
+addPokemonToDataBase('#298','http://www.serebii.net/shuffle/pokemon/282-m.png','Mega Gardevoir','fairy','70','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#299','http://www.serebii.net/shuffle/pokemon/475.png','Gallade','fighting','70','Block Smash+','Expert Stages - Stage EX29','1%');
+addPokemonToDataBase('#300','http://www.serebii.net/shuffle/pokemon/638.png','Cobalion','steel','70','Power of 4+','Expert Stages - Stage EX27','1%');
+addPokemonToDataBase('#301','http://www.serebii.net/shuffle/pokemon/639.png','Terrakion','rock','70','Power of 4+','Expert Stages - Stage EX25','1%');
+addPokemonToDataBase('#302','http://www.serebii.net/shuffle/pokemon/640.png','Virizion','grass','70','Power of 4+','Expert Stages - Stage EX26','1%');
+addPokemonToDataBase('#303','http://www.serebii.net/shuffle/pokemon/491.png','Darkrai','dark','80','Sleep Charm','Special Stages - Stage SP','1-100%');
+addPokemonToDataBase('#304','http://www.serebii.net/shuffle/pokemon/455.png','Carnivine','grass','60','Risk Taker','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#305','http://www.serebii.net/shuffle/pokemon/249.png','Lugia','flying','80','Eject+','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#306','http://www.serebii.net/shuffle/pokemon/250.png','Ho-Oh','fire','80','Power of 5+','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#307','http://www.serebii.net/shuffle/pokemon/719.png','Diancie','fairy','70','Barrier Bash+','Special Stages - Stage SP','3%<br>1-100%');
+addPokemonToDataBase('#307','http://www.serebii.net/shuffle/pokemon/719-m.png','Mega Diancie','fairy','70','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#308','http://www.serebii.net/shuffle/pokemon/300.png','Skitty','normal','30','Mega Boost+','Albens Town - Stage 222','3%');
+addPokemonToDataBase('#309','http://www.serebii.net/shuffle/pokemon/301.png','Delcatty','normal','50','Prank','Albens Town - Stage 236','14%');
+addPokemonToDataBase('#310','http://www.serebii.net/shuffle/pokemon/599.png','Klink','steel','50','Damage Streak','Albens Town - Stage 225','10%');
+addPokemonToDataBase('#311','http://www.serebii.net/shuffle/pokemon/600.png','Klang','steel','60','Power of 5','Albens Town - Stage 227','9%');
+addPokemonToDataBase('#312','http://www.serebii.net/shuffle/pokemon/601.png','Klinklang','steel','70','Damage Streak','Albens Town - Stage 239','23%');
+addPokemonToDataBase('#313','http://www.serebii.net/shuffle/pokemon/307.png','Meditite','fighting','40','Astonish','Albens Town - Stage 221','6%');
+addPokemonToDataBase('#314','http://www.serebii.net/shuffle/pokemon/308.png','Medicham','fighting','60','Mega Boost','Albens Town - Stage 230','3%');
+addPokemonToDataBase('#314','http://www.serebii.net/shuffle/pokemon/308-m.png','Mega Medicham','fighting','60','undefined','Albens Town - Stage 240','undefined');
+addPokemonToDataBase('#315','http://www.serebii.net/shuffle/pokemon/380.png','Latias','dragon','80','Swap','Special Stages - Stage SP','');
+addPokemonToDataBase('#315','http://www.serebii.net/shuffle/pokemon/380-m.png','Mega Latias','dragon','80','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#316','http://www.serebii.net/shuffle/pokemon/381.png','Latios','dragon','80','Counterattack','Special Stages - Stage SP','1-100%');
+addPokemonToDataBase('#316','http://www.serebii.net/shuffle/pokemon/381-m.png','Mega Latios','dragon','80','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#317','http://www.serebii.net/shuffle/pokemon/041.png','Zubat','poison','30','Paralyze','Special Stages - Stage SP','15%');
+addPokemonToDataBase('#318','http://www.serebii.net/shuffle/pokemon/042.png','Golbat','poison','60','Power of 4','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#319','http://www.serebii.net/shuffle/pokemon/169.png','Crobat','poison','70','Poisonous Mist','Special Stages - Stage SP','20%');
+addPokemonToDataBase('#320','http://www.serebii.net/shuffle/pokemon/710.png','Pumpkaboo','ghost','50','Risk Taker','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#321','http://www.serebii.net/shuffle/pokemon/711.png','Gourgeist','ghost','60','Eject','Special Stages - Stage SP','8%');
+addPokemonToDataBase('#322','http://www.serebii.net/shuffle/pokemon/355.png','Duskull','ghost','40','Block Smash','Special Stages - Stage SP','15%');
+addPokemonToDataBase('#323','http://www.serebii.net/shuffle/pokemon/356.png','Dusclops','ghost','60','Sleep Charm','Special Stages - Stage SP','25%');
+addPokemonToDataBase('#324','http://www.serebii.net/shuffle/pokemon/477.png','Dusknoir','ghost','70','Last-Ditch Effort','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#325','http://www.serebii.net/shuffle/pokemon/088.png','Grimer','poison','50','Crowd Control','Albens Town - Stage 231','9%');
+addPokemonToDataBase('#326','http://www.serebii.net/shuffle/pokemon/089.png','Muk','poison','70','Power of 4+','Albens Town - Stage 234','4%');
+addPokemonToDataBase('#327','http://www.serebii.net/shuffle/pokemon/278.png','Wingull','flying','40','Cloud Clear','Albens Town - Stage 232','9%');
+addPokemonToDataBase('#328','http://www.serebii.net/shuffle/pokemon/279.png','Pelipper','flying','60','Power of 4','Albens Town - Stage 237','2%');
+addPokemonToDataBase('#329','http://www.serebii.net/shuffle/pokemon/626.png','Bouffalant','normal','60','Rock Break','Albens Town - Stage 233','19%');
+addPokemonToDataBase('#330','http://www.serebii.net/shuffle/pokemon/624.png','Pawniard','dark','50','Block Smash','Albens Town - Stage 235','3%');
+addPokemonToDataBase('#331','http://www.serebii.net/shuffle/pokemon/625.png','Bisharp','dark','70','Rock Break+','Expert Stages - Stage EX28','1%');
+addPokemonToDataBase('#332','http://www.serebii.net/shuffle/pokemon/631.png','Heatmor','fire','60','Eject','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#333','http://www.serebii.net/shuffle/pokemon/632.png','Durant','bug','60','Block Smash','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#334','http://www.serebii.net/shuffle/pokemon/556.png','Maractus','grass','60','Barrier Bash','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#335','http://www.serebii.net/shuffle/pokemon/206.png','Dunsparce','normal','40','Mega Boost+','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#336','http://www.serebii.net/shuffle/pokemon/211.png','Qwilfish','water','50','Paralyze','Special Stages - Stage SP','3%');
+addPokemonToDataBase('#337','http://www.serebii.net/shuffle/pokemon/641.png','Tornadus','flying','70','Power of 5+','Special Stages - Stage SP','9%<br>14%<br>19%<br>24%<br>29%<br>34%<br>39%');
+addPokemonToDataBase('#338','http://www.serebii.net/shuffle/pokemon/642.png','Thundurus','electric','70','Power of 5+','Special Stages - Stage SP','9%<br>14%<br>19%<br>24%<br>29%<br>34%<br>39%');
+addPokemonToDataBase('#339','http://www.serebii.net/shuffle/pokemon/645.png','Landorus','ground','80','Power of 5+','Special Stages - Stage SP','9%<br>14%<br>19%<br>24%<br>29%<br>34%<br>39%');
+addPokemonToDataBase('#340','http://www.serebii.net/shuffle/pokemon/406.png','Budew','grass','40','Mega Boost+','Roseus Center - Stage 241','12%');
+addPokemonToDataBase('#341','http://www.serebii.net/shuffle/pokemon/315.png','Roselia','grass','60','Rock Break','Roseus Center - Stage 248','4%');
+addPokemonToDataBase('#342','http://www.serebii.net/shuffle/pokemon/407.png','Roserade','grass','70','Stabilize+','Roseus Center - Stage 250','23%');
+addPokemonToDataBase('#343','http://www.serebii.net/shuffle/pokemon/066.png','Machop','fighting','50','Pummel','Roseus Center - Stage 242','23%');
+addPokemonToDataBase('#344','http://www.serebii.net/shuffle/pokemon/067.png','Machoke','fighting','60','Stabilize','Roseus Center - Stage 247','19%');
+addPokemonToDataBase('#345','http://www.serebii.net/shuffle/pokemon/068.png','Machamp','fighting','70','Eject','Special Stages - Stage SP','12%');
+addPokemonToDataBase('#346','http://www.serebii.net/shuffle/pokemon/403.png','Shinx','electric','30','Counterattack','Roseus Center - Stage 243','22%');
+addPokemonToDataBase('#347','http://www.serebii.net/shuffle/pokemon/404.png','Luxio','electric','50','Block Smash','Roseus Center - Stage 245','21%');
+addPokemonToDataBase('#348','http://www.serebii.net/shuffle/pokemon/405.png','Luxray','electric','70','Cloud Clear+','Expert Stages - Stage EX31','1%');
+addPokemonToDataBase('#349','http://www.serebii.net/shuffle/pokemon/293.png','Whismur','normal','30','Paralyze','Roseus Center - Stage 244','12%');
+addPokemonToDataBase('#350','http://www.serebii.net/shuffle/pokemon/294.png','Loudred','normal','50','Spookify','Roseus Center - Stage 257','15%');
+addPokemonToDataBase('#351','http://www.serebii.net/shuffle/pokemon/295.png','Exploud','normal','60','Eject+','Roseus Center - Stage 259','13%');
+addPokemonToDataBase('#352','http://www.serebii.net/shuffle/pokemon/682.png','Spritzee','fairy','50','Mega Boost+','Roseus Center - Stage 246','17%');
+addPokemonToDataBase('#353','http://www.serebii.net/shuffle/pokemon/683.png','Aromatisse','fairy','60','Power of 4','Roseus Center - Stage 249','19%');
+addPokemonToDataBase('#354','http://www.serebii.net/shuffle/pokemon/486.png','Regigigas','normal','90','Hyper Punch','Special Stages - Stage SP','9%');
+addPokemonToDataBase('#355','http://www.serebii.net/shuffle/pokemon/386.png','Deoxys','psychic','80','Swap+','Roseus Center - Stage 260','9%');
+addPokemonToDataBase('#356','http://www.serebii.net/shuffle/pokemon/387.png','Turtwig','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#357','http://www.serebii.net/shuffle/pokemon/388.png','Grotle','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#358','http://www.serebii.net/shuffle/pokemon/389.png','Torterra','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#359','http://www.serebii.net/shuffle/pokemon/390.png','Chimchar','fire','50','Prank','Roseus Center - Stage 252','6%');
+addPokemonToDataBase('#360','http://www.serebii.net/shuffle/pokemon/391.png','Monferno','fire','60','Swap','Roseus Center - Stage 254','12%');
+addPokemonToDataBase('#361','http://www.serebii.net/shuffle/pokemon/392.png','Infernape','fire','70','Hitting Streak','Special Stages - Stage SP','15%');
+addPokemonToDataBase('#362','http://www.serebii.net/shuffle/pokemon/393.png','Piplup','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#363','http://www.serebii.net/shuffle/pokemon/394.png','Prinplup','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#364','http://www.serebii.net/shuffle/pokemon/395.png','Empoleon','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#365','http://www.serebii.net/shuffle/pokemon/686.png','Inkay','dark','40','Mega Boost+','Roseus Center - Stage 251','7%');
+addPokemonToDataBase('#366','http://www.serebii.net/shuffle/pokemon/687.png','Malamar','dark','70','Quirky+','Expert Stages - Stage EX32','1%');
+addPokemonToDataBase('#367','http://www.serebii.net/shuffle/pokemon/672.png','Skiddo','grass','50','Barrier Bash','Roseus Center - Stage 253','20%');
+addPokemonToDataBase('#368','http://www.serebii.net/shuffle/pokemon/673.png','Gogoat','grass','70','Quirky+','Roseus Center - Stage 256','14%');
+addPokemonToDataBase('#369','http://www.serebii.net/shuffle/pokemon/595.png','Joltik','bug','50','Mega Boost','Roseus Center - Stage 255','21%');
+addPokemonToDataBase('#370','http://www.serebii.net/shuffle/pokemon/596.png','Galvantula','bug','60','Paralyze','Roseus Center - Stage 258','14%');
+addPokemonToDataBase('#371','http://www.serebii.net/shuffle/pokemon/661.png','Fletchling','flying','40','Counterattack','Special Stages - Stage SP','15%');
+addPokemonToDataBase('#372','http://www.serebii.net/shuffle/pokemon/662.png','Fletchinder','fire','50','Swap+','Special Stages - Stage SP','20%');
+addPokemonToDataBase('#373','http://www.serebii.net/shuffle/pokemon/663.png','Talonflame','fire','60','Block Smash+','Special Stages - Stage SP','5%');
+addPokemonToDataBase('#374','http://www.serebii.net/shuffle/pokemon/322.png','Numel','ground','50','Burn','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#375','http://www.serebii.net/shuffle/pokemon/323.png','Camerupt','ground','70','Power of 4','Special Stages - Stage SP','30%');
+addPokemonToDataBase('#376','http://www.serebii.net/shuffle/pokemon/524.png','Roggenrola','rock','40','Last-Ditch Effort','Special Stages - Stage SP','10%');
+addPokemonToDataBase('#377','http://www.serebii.net/shuffle/pokemon/525.png','Boldore','rock','50','Heavy Hitter','Special Stages - Stage SP','20%');
+addPokemonToDataBase('#378','http://www.serebii.net/shuffle/pokemon/526.png','Gigalith','rock','70','Block Smash+','Special Stages - Stage SP','19%');
+addPokemonToDataBase('#379','http://www.serebii.net/shuffle/pokemon/019.png','Rattata','normal','30','Prank','Roseus Center - Stage 276','8%');
+addPokemonToDataBase('#380','http://www.serebii.net/shuffle/pokemon/020.png','Raticate','normal','60','Counterattack','Roseus Center - Stage 281','14%');
+addPokemonToDataBase('#381','http://www.serebii.net/shuffle/pokemon/459.png','Snover','ice','50','Block Smash','Roseus Center - Stage 286','11%');
+addPokemonToDataBase('#382','http://www.serebii.net/shuffle/pokemon/460.png','Abomasnow','ice','60','Heavy Hitter','Roseus Center - Stage 289','6%');
+addPokemonToDataBase('#382','http://www.serebii.net/shuffle/pokemon/460-m.png','Mega Abomasnow','ice','60','undefined','Special Stages - Stage SP','undefined');
+addPokemonToDataBase('#383','http://www.serebii.net/shuffle/pokemon/669.png','Flabébé','fairy','40','Quirky','Roseus Center - Stage 262','5%');
+addPokemonToDataBase('#384','http://www.serebii.net/shuffle/pokemon/670.png','Floette','fairy','50','Cloud Clear','Roseus Center - Stage 273','8%');
+addPokemonToDataBase('#385','http://www.serebii.net/shuffle/pokemon/671.png','Florges','fairy','70','Swap+','Roseus Center - Stage 280','6%');
+addPokemonToDataBase('#386','http://www.serebii.net/shuffle/pokemon/517.png','Munna','psychic','40','Block Smash','Roseus Center - Stage 265','20%');
+addPokemonToDataBase('#387','http://www.serebii.net/shuffle/pokemon/518.png','Musharna','psychic','60','Mind Zap','Roseus Center - Stage 267','6%');
+addPokemonToDataBase('#388','http://www.serebii.net/shuffle/pokemon/084.png','Doduo','flying','50','Block Smash','Roseus Center - Stage 294','5%');
+addPokemonToDataBase('#389','http://www.serebii.net/shuffle/pokemon/085.png','Dodrio','flying','60','Risk Taker','Roseus Center - Stage 296','9%');
+addPokemonToDataBase('#390','http://www.serebii.net/shuffle/pokemon/594.png','Alomomola','water','60','Swap','Roseus Center - Stage 288','20%');
+addPokemonToDataBase('#391','http://www.serebii.net/shuffle/pokemon/304.png','Aron','steel','50','Rock Break','Roseus Center - Stage 261','8%');
+addPokemonToDataBase('#392','http://www.serebii.net/shuffle/pokemon/305.png','Lairon','steel','60','Mega Boost','Roseus Center - Stage 268','8%');
+addPokemonToDataBase('#393','http://www.serebii.net/shuffle/pokemon/306.png','Aggron','steel','70','Eject','Roseus Center - Stage 270','3%');
+addPokemonToDataBase('#394','http://www.serebii.net/shuffle/pokemon/170.png','Chinchou','electric','50','Astonish','Roseus Center - Stage 282','14%');
+addPokemonToDataBase('#395','http://www.serebii.net/shuffle/pokemon/171.png','Lanturn','electric','60','Cloud Clear+','Roseus Center - Stage 287','9%');
+addPokemonToDataBase('#396','http://www.serebii.net/shuffle/pokemon/629.png','Vullaby','dark','50','Barrier Bash','Roseus Center - Stage 266','5%');
+addPokemonToDataBase('#397','http://www.serebii.net/shuffle/pokemon/630.png','Mandibuzz','dark','70','Hitting Streak','Roseus Center - Stage 274','6%');
+addPokemonToDataBase('#398','http://www.serebii.net/shuffle/pokemon/137.png','Porygon','normal','50','Barrier Bash+','Roseus Center - Stage 278','20%');
+addPokemonToDataBase('#399','http://www.serebii.net/shuffle/pokemon/233.png','Porygon2','normal','70','Crowd Power','Roseus Center - Stage 297','15%');
+addPokemonToDataBase('#400','http://www.serebii.net/shuffle/pokemon/474.png','Porygon-Z','normal','70','Shock Attack','Expert Stages - Stage EX35','1%');
+addPokemonToDataBase('#401','http://www.serebii.net/shuffle/pokemon/167.png','Spinarak','bug','30','Rock Break','Roseus Center - Stage 275','8%');
+addPokemonToDataBase('#402','http://www.serebii.net/shuffle/pokemon/168.png','Ariados','bug','50','Power of 5','Roseus Center - Stage 277','6%');
+addPokemonToDataBase('#403','http://www.serebii.net/shuffle/pokemon/535.png','Tympole','water','40','Astonish','Roseus Center - Stage 271','8%');
+addPokemonToDataBase('#404','http://www.serebii.net/shuffle/pokemon/536.png','Palpitoad','water','50','Damage Streak','Roseus Center - Stage 283','14%');
+addPokemonToDataBase('#405','http://www.serebii.net/shuffle/pokemon/537.png','Seismitoad','water','70','Last-Ditch Effort','Roseus Center - Stage 292','4%');
+addPokemonToDataBase('#406','http://www.serebii.net/shuffle/pokemon/299.png','Nosepass','rock','50','Block Smash','Roseus Center - Stage 272','11%');
+addPokemonToDataBase('#407','http://www.serebii.net/shuffle/pokemon/476.png','Probopass','rock','70','Stabilize+','Roseus Center - Stage 284','13%');
+addPokemonToDataBase('#408','http://www.serebii.net/shuffle/pokemon/296.png','Makuhita','fighting','30','Barrier Bash','Roseus Center - Stage 263','8%');
+addPokemonToDataBase('#409','http://www.serebii.net/shuffle/pokemon/297.png','Hariyama','fighting','60','Stabilize+','Roseus Center - Stage 264','9%');
+addPokemonToDataBase('#410','http://www.serebii.net/shuffle/pokemon/174.png','Igglybuff','fairy','30','Sleep Charm','Roseus Center - Stage 285','8%');
+addPokemonToDataBase('#411','http://www.serebii.net/shuffle/pokemon/039.png','Jigglypuff','fairy','40','Barrier Bash','Roseus Center - Stage 293','14%');
+addPokemonToDataBase('#412','http://www.serebii.net/shuffle/pokemon/040.png','Wigglytuff','fairy','60','Stabilize+','Roseus Center - Stage 299','4%');
+addPokemonToDataBase('#413','http://www.serebii.net/shuffle/pokemon/220.png','Swinub','ice','30','Rock Break','Roseus Center - Stage 291','12%');
+addPokemonToDataBase('#414','http://www.serebii.net/shuffle/pokemon/221.png','Piloswine','ice','60','Stabilize','Roseus Center - Stage 295','15%');
+addPokemonToDataBase('#415','http://www.serebii.net/shuffle/pokemon/473.png','Mamoswine','ice','70','Barrier Bash+','Expert Stages - Stage EX33','1%');
+addPokemonToDataBase('#416','http://www.serebii.net/shuffle/pokemon/434.png','Stunky','poison','50','Rock Break','undefined','N/A');
+addPokemonToDataBase('#417','http://www.serebii.net/shuffle/pokemon/435.png','Skuntank','poison','60','Last-Ditch Effort','Roseus Center - Stage 279','9%');
+addPokemonToDataBase('#418','http://www.serebii.net/shuffle/pokemon/207.png','Gligar','ground','60','Cloud Clear','Roseus Center - Stage 269','10%');
+addPokemonToDataBase('#419','http://www.serebii.net/shuffle/pokemon/472.png','Gliscor','ground','70','Rock Break+','Expert Stages - Stage EX34','1%');
+addPokemonToDataBase('#420','http://www.serebii.net/shuffle/pokemon/643.png','Reshiram','fire','80','Barrier Bash+','Special Stages - Stage SP','1%');
+addPokemonToDataBase('#421','http://www.serebii.net/shuffle/pokemon/644.png','Zekrom','electric','80','Block Smash+','Special Stages - Stage SP','1%');
+addPokemonToDataBase('#422','http://www.serebii.net/shuffle/pokemon/646.png','Kyurem','ice','80','Power of 5+','Special Stages - Stage SP','1-100%');
+addPokemonToDataBase('#423','http://www.serebii.net/shuffle/pokemon/013.png','Weedle','poison','30','Mind Zap','Desert Umbra - Stage 337','11');
+addPokemonToDataBase('#424','http://www.serebii.net/shuffle/pokemon/014.png','Kakuna','poison','40','Last-Ditch Effort','Desert Umbra - Stage 341','23');
+addPokemonToDataBase('#425','http://www.serebii.net/shuffle/pokemon/015.png','Beedrill','poison','60','Block Smash+','Special Stages - Stage SP','');
+addPokemonToDataBase('#426','http://www.serebii.net/shuffle/pokemon/161.png','Sentret','normal','30','Crowd Control','Desert Umbra - Stage 338','11');
+addPokemonToDataBase('#427','http://www.serebii.net/shuffle/pokemon/162.png','Furret','normal','60','Astonish','Desert Umbra - Stage 339','9');
+addPokemonToDataBase('#428','http://www.serebii.net/shuffle/pokemon/102.png','Exeggcute','grass','50','Crowd Control','Desert Umbra - Stage 323','1');
+addPokemonToDataBase('#429','http://www.serebii.net/shuffle/pokemon/103.png','Exeggutor','grass','70','Cloud Clear+','Desert Umbra - Stage 348','20');
+addPokemonToDataBase('#430','http://www.serebii.net/shuffle/pokemon/456.png','Finneon','water','50','Quirky','Desert Umbra - Stage 326','15');
+addPokemonToDataBase('#431','http://www.serebii.net/shuffle/pokemon/457.png','Lumineon','water','60','Quirky+','Desert Umbra - Stage 335','10');
+addPokemonToDataBase('#432','http://www.serebii.net/shuffle/pokemon/511.png','Pansage','grass','50','Counterattack','Desert Umbra - Stage 315','23');
+addPokemonToDataBase('#433','http://www.serebii.net/shuffle/pokemon/512.png','Simisage','grass','60','Astonish','Desert Umbra - Stage 334','9');
+addPokemonToDataBase('#434','http://www.serebii.net/shuffle/pokemon/513.png','Pansear','fire','50','Counterattack','Desert Umbra - Stage 301','23');
+addPokemonToDataBase('#435','http://www.serebii.net/shuffle/pokemon/514.png','Simisear','fire','60','Paralyze','Desert Umbra - Stage 322','9');
+addPokemonToDataBase('#436','http://www.serebii.net/shuffle/pokemon/515.png','Panpour','water','50','Counterattack','Desert Umbra - Stage 312','23');
+addPokemonToDataBase('#437','http://www.serebii.net/shuffle/pokemon/516.png','Simipour','water','60','Quake','Desert Umbra - Stage 331','9');
+addPokemonToDataBase('#438','http://www.serebii.net/shuffle/pokemon/058.png','Growlithe','fire','50','Risk Taker','Desert Umbra - Stage 313','11');
+addPokemonToDataBase('#439','http://www.serebii.net/shuffle/pokemon/059.png','Arcanine','fire','70','Power of 4+','Expert Stages - Stage EX38','1');
+addPokemonToDataBase('#440','http://www.serebii.net/shuffle/pokemon/081.png','Magnemite','electric','50','Barrier Bash','Desert Umbra - Stage 325','30');
+addPokemonToDataBase('#441','http://www.serebii.net/shuffle/pokemon/082.png','Magneton','electric','60','Crowd Control','Desert Umbra - Stage 328','17');
+addPokemonToDataBase('#442','http://www.serebii.net/shuffle/pokemon/462.png','Magnezone','electric','70','Power of 4+','Desert Umbra - Stage 330','5');
+addPokemonToDataBase('#443','http://www.serebii.net/shuffle/pokemon/198.png','Murkrow','dark','60','Stabilize','Desert Umbra - Stage 307','5');
+addPokemonToDataBase('#444','http://www.serebii.net/shuffle/pokemon/430.png','Honchkrow','dark','70','Power of 5+','Expert Stages - Stage EX37','1');
+addPokemonToDataBase('#445','http://www.serebii.net/shuffle/pokemon/363.png','Spheal','ice','40','Crowd Control','Desert Umbra - Stage 314','20');
+addPokemonToDataBase('#446','http://www.serebii.net/shuffle/pokemon/364.png','Sealeo','ice','60','Eject','Desert Umbra - Stage 317','19');
+addPokemonToDataBase('#447','http://www.serebii.net/shuffle/pokemon/365.png','Walrein','ice','70','Rock Break+','Expert Stages - Stage EX36','1');
+addPokemonToDataBase('#448','http://www.serebii.net/shuffle/pokemon/451.png','Skorupi','poison','50','Counterattack','Desert Umbra - Stage 343','21');
+addPokemonToDataBase('#449','http://www.serebii.net/shuffle/pokemon/452.png','Drapion','poison','70','Power of 5+','Desert Umbra - Stage 347','16');
+addPokemonToDataBase('#450','http://www.serebii.net/shuffle/pokemon/622.png','Golett','ground','50','Heavy Hitter','Desert Umbra - Stage 324','14');
+addPokemonToDataBase('#451','http://www.serebii.net/shuffle/pokemon/623.png','Golurk','ground','60','Block Smash+','Desert Umbra - Stage 340','21');
+addPokemonToDataBase('#452','http://www.serebii.net/shuffle/pokemon/696.png','Tyrunt','rock','50','Rock Break','Desert Umbra - Stage 316','21');
+addPokemonToDataBase('#453','http://www.serebii.net/shuffle/pokemon/697.png','Tyrantrum','rock','70','Dragon Talon','Desert Umbra - Stage 320','5');
+addPokemonToDataBase('#454','http://www.serebii.net/shuffle/pokemon/046.png','Paras','bug','40','Paralyze','Desert Umbra - Stage 302','8');
+addPokemonToDataBase('#455','http://www.serebii.net/shuffle/pokemon/047.png','Parasect','bug','60','Sleep Charm','Desert Umbra - Stage 306','20');
+addPokemonToDataBase('#456','http://www.serebii.net/shuffle/pokemon/216.png','Teddiursa','normal','50','Swap','Desert Umbra - Stage 329','20');
+addPokemonToDataBase('#457','http://www.serebii.net/shuffle/pokemon/217.png','Ursaring','normal','70','Risk Taker','Desert Umbra - Stage 342','10');
+addPokemonToDataBase('#458','http://www.serebii.net/shuffle/pokemon/325.png','Spoink','psychic','50','Paralyze','Desert Umbra - Stage 304','5');
+addPokemonToDataBase('#459','http://www.serebii.net/shuffle/pokemon/326.png','Grumpig','psychic','60','Stabilize+','Desert Umbra - Stage 309','12');
+addPokemonToDataBase('#460','http://www.serebii.net/shuffle/pokemon/109.png','Koffing','poison','50','Barrier Bash','Desert Umbra - Stage 305','14');
+addPokemonToDataBase('#461','http://www.serebii.net/shuffle/pokemon/110.png','Weezing','poison','60','Quirky+','Desert Umbra - Stage 310','14');
+addPokemonToDataBase('#462','http://www.serebii.net/shuffle/pokemon/551.png','Sandile','ground','40','Prank','Desert Umbra - Stage 327','21');
+addPokemonToDataBase('#463','http://www.serebii.net/shuffle/pokemon/552.png','Krokorok','ground','50','Astonish','Desert Umbra - Stage 346','30');
+addPokemonToDataBase('#464','http://www.serebii.net/shuffle/pokemon/553.png','Krookodile','ground','70','Risk Taker','Desert Umbra - Stage 349','5');
+addPokemonToDataBase('#465','http://www.serebii.net/shuffle/pokemon/708.png','Phantump','ghost','50','Stabilize','Desert Umbra - Stage 303','19');
+addPokemonToDataBase('#466','http://www.serebii.net/shuffle/pokemon/709.png','Trevenant','ghost','60','Swap+','Desert Umbra - Stage 308','18');
+addPokemonToDataBase('#467','http://www.serebii.net/shuffle/pokemon/056.png','Mankey','fighting','50','Crowd Control','Desert Umbra - Stage 319','15');
+addPokemonToDataBase('#468','http://www.serebii.net/shuffle/pokemon/057.png','Primeape','fighting','60','Power of 5+','Desert Umbra - Stage 344','14');
+addPokemonToDataBase('#469','http://www.serebii.net/shuffle/pokemon/021.png','Spearow','flying','30','Last-Ditch Effort','Desert Umbra - Stage 311','12');
+addPokemonToDataBase('#470','http://www.serebii.net/shuffle/pokemon/022.png','Fearow','flying','60','Rock Break+','Desert Umbra - Stage 318','10');
+addPokemonToDataBase('#471','http://www.serebii.net/shuffle/pokemon/238.png','Smoochum','ice','50','Quirky','Desert Umbra - Stage 333','11');
+addPokemonToDataBase('#472','http://www.serebii.net/shuffle/pokemon/124.png','Jynx','ice','60','Barrier Bash+','Desert Umbra - Stage 345','21');
+addPokemonToDataBase('#473','http://www.serebii.net/shuffle/pokemon/138.png','Omanyte','water','50','Sleep Charm','Desert Umbra - Stage 336','9');
+addPokemonToDataBase('#474','http://www.serebii.net/shuffle/pokemon/139.png','Omastar','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#475','http://www.serebii.net/shuffle/pokemon/140.png','Kabuto','rock','50','Rock Break+','Desert Umbra - Stage 332','7');
+addPokemonToDataBase('#476','http://www.serebii.net/shuffle/pokemon/141.png','Kabutops','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#477','http://www.serebii.net/shuffle/pokemon/129.png','Magikarp','water','30','Swap++','Desert Umbra - Stage 321','5');
+addPokemonToDataBase('#478','http://www.serebii.net/shuffle/pokemon/130.png','Gyarados','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#479','http://www.serebii.net/shuffle/pokemon/043.png','Oddish','grass','50','Power of 4','Special Stages - Stage SP','');
+addPokemonToDataBase('#480','http://www.serebii.net/shuffle/pokemon/044.png','Gloom','grass','60','Paralyze','Special Stages - Stage SP','');
+addPokemonToDataBase('#481','http://www.serebii.net/shuffle/pokemon/045.png','Vileplume','grass','70','Power of 5+','Special Stages - Stage SP','');
+addPokemonToDataBase('#482','http://www.serebii.net/shuffle/pokemon/182.png','Bellossom','none','','undefined','undefined','N/A');
+addPokemonToDataBase('#483','http://www.serebii.net/shuffle/pokemon/128.png','Tauros','normal','70','Quake','Special Stages - Stage SP','');
+addPokemonToDataBase('#484','http://www.serebii.net/shuffle/pokemon/063.png','Abra','psychic','50','Rock Break','Special Stages - Stage SP','');
+addPokemonToDataBase('#485','http://www.serebii.net/shuffle/pokemon/064.png','Kadabra','psychic','60','Counterattack','Special Stages - Stage SP','');
+addPokemonToDataBase('#486','http://www.serebii.net/shuffle/pokemon/065.png','Alakazam','psychic','70','Risk Taker','Special Stages - Stage SP','');
+
+
+
+
+
+
+
+
+addPokemonToDataBase('#997','http://farm1.staticflickr.com/44/112000502_f55bd34a99.jpg','COIN','NONE','100','','','');
+addPokemonToDataBase('#998','http://vignette4.wikia.nocookie.net/thief/images/7/7a/DromEd_Custom_Texture_DEDX01_WoodX_Xwood10.jpg/revision/latest?cb=20090331195825','WOOD','NONE','100','','','');
+addPokemonToDataBase('#999','http://psdhunter.com/psds/1501-thumb-stainless-steel-mesh-background.png','STEEL','NONE','0','','','');
+}
+
+function isShortCutLibAvaliable(){
+	return typeof( shortcut ) != "undefined";
+}
+
+function updateAllShortCuts(){
+	for( var sc in shortcut.all_shortcuts ){
+		//shortcut.all_shortcuts[sc]
+	}
+}
+
+$(document).ready( function(){
+	createShuffle();
+	createPokemonDataBase();
+	fillPokemonSelect();
+	//fillExample();
+	
+	legend = {};
+	
+	
+	$(".pokemonAbbr").bind("blur", function(){
+		updateAllShuffleBackground();
+		updateAllShortCuts();
+	} );
+	
+	$(".pokemonSelect").bind("blur", function(){
+		var letterNumber = 0;
+		var s = $(this);
+		
+		var abbrInput = s.parent().prev().find(".pokemonAbbr");
+
+		var abbrLetter = "";
+		var pokemonName = s.find("option:selected").html();
+
+		do{
+			if( pokemonName.length <= letterNumber ){
+				break;
+			}
+			abbrLetter = pokemonName.charAt( letterNumber++ );
+			abbrLetter = abbrLetter.toUpperCase();
+		}while( legend[ abbrLetter ] != undefined );
+
+		abbrInput.val( abbrLetter );
+		
+		abbrInput.css("background-color", "black");
+		abbrInput.css("color", "white");
+		
+		setTimeout( function(){
+			abbrInput.css("background-color", "white");
+			abbrInput.css("color", "black");
+		}, 250 );
+		
+		updateAllShuffleBackground();
+		updateAllShortCuts();
+	} );
+	
+} );
+
+</script>
+
+</body>
+
+</html>
